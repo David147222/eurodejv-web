@@ -1,5 +1,5 @@
 {
-  "_poznamka": "Menu nahoře (menu), dvě půlky webu s podmenu (sekce: Stavíme a Půjčovna) a odkazy v patičce (paticka). Stránka v sekci má v menu zvýrazněnou svou půlku.",
+  "_poznamka": "Menu nahoře (menu), dvě půlky webu s podmenu (sekce: Stavíme a Půjčovna; u každé stránky název a krátký popis pro přepínač pod hlavičkou) a odkazy v patičce (paticka). Stránka v sekci má v menu zvýrazněnou svou půlku.",
   "menu": [
     ["uvod", "Úvod"],
     ["stavebni-prace", "Stavíme"],
@@ -10,14 +10,14 @@
   ],
   "sekce": {
     "stavebni-prace": [
-      ["stavebni-prace", "Stavební práce"],
-      ["zatepleni-fasad", "Zateplení fasád"],
-      ["zemni-prace", "Zemní práce"],
-      ["drceni-a-material", "Drcení a štěrk"]
+      ["stavebni-prace", "Stavební práce", "Stavby a rekonstrukce"],
+      ["zatepleni-fasad", "Zateplení fasád", "Kompletně i s lešením"],
+      ["zemni-prace", "Zemní práce", "Výkopy a demolice"],
+      ["drceni-a-material", "Drcení a štěrk", "Drcení suti, štěrk, recyklát"]
     ],
     "pujcovna": [
-      ["pujcovna", "Stroje a nářadí"],
-      ["leseni", "Lešení"]
+      ["pujcovna", "Stroje a nářadí", "Bagry, nakladače, nářadí"],
+      ["leseni", "Lešení", "Rámové lešení a věž BOOS"]
     ]
   },
   "paticka": [

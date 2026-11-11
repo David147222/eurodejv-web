@@ -183,10 +183,22 @@ function nav(cur) {
   return '<ul>' + STR.menu.slice(1).map(m => `<li><a href="${url(m[0])}"${m[0] === top ? ` class="on"${m[0] === cur ? ' aria-current="page"' : ''}` : ''}>${m[1]}</a></li>`).join('') + '</ul>';
 }
 // Podmenu pod hlavičkou na stránkách jedné půlky webu
+// Ikony pro přepínač pod hlavičkou (podle adresy stránky; stránka bez ikony ji prostě nemá)
+const IKONY = {
+  'stavebni-prace': 'M3 11 12 4l9 7M5 9.5V20h5v-6h4v6h5V9.5',
+  'zatepleni-fasad': 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v5.3M15 4v5.3M6 9.3v5.4M12 9.3v5.4M18 9.3v5.4M9 14.7V20M15 14.7V20',
+  'zemni-prace': 'M2 20h20M4 20c1-4 3-6 6-6s5 2 6 6M14 4l6 6M17 7l-5 5',
+  'drceni-a-material': 'M2 20h20M3 20l4-6 3 2 3-5 3 4 2-1 3 6M8 8h.01M12 5h.01M15 8h.01',
+  'pujcovna': 'M2 19a2 2 0 0 1 2-2h8a2 2 0 0 1 0 4H4a2 2 0 0 1-2-2zM4 17v-5h4l2 2v3M10 14l4-8 5 3-1 3M18 12l2 3h-4z',
+  'leseni': 'M5 3v18M19 3v18M5 8h14M5 14h14M5 20h14M5 8l14 6M5 14l14 6',
+};
+const ikona = id => IKONY[id] ? `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${IKONY[id]}"/></svg>` : '';
+
 function podmenu(cur) {
   const s = sekceStranky(cur);
   if (!s) return '';
-  return `<nav class="sub" aria-label="${esc(jmenoVMenu(s))}"><div class="in"><ul>${SEKCE[s].map(([i, n]) => `<li><a href="${url(i)}"${i === cur ? ' class="on" aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul></div></nav>`;
+  const pol = SEKCE[s].map(([i, n, p]) => `<li><a href="${url(i)}"${i === cur ? ' class="on" aria-current="page"' : ''}>${ikona(i)}<span><b>${n}</b>${p ? `<small>${esc(p)}</small>` : ''}</span></a></li>`).join('');
+  return `<nav class="sub" aria-label="${esc(jmenoVMenu(s))}"><div class="in"><span class="sub-t">${esc(jmenoVMenu(s))}</span><ul class="n${SEKCE[s].length}">${pol}</ul></div></nav>`;
 }
 
 function jmenoVMenu(id) {
