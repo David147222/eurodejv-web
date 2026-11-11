@@ -1,0 +1,136 @@
+{
+  "fotky": [
+    {
+      "klic": "hero",
+      "popis": "Úvod – velká fotka nahoře",
+      "foto": "/foto/drevostavba.jpg",
+      "alt": "Patrový dřevěný dům s pergolou"
+    },
+    {
+      "klic": "fasada",
+      "popis": "Stavební práce – fotka nahoře, dlaždice na úvodu",
+      "foto": "/foto/bytovy-dum-fasada.jpg",
+      "alt": "Bytový dům s novou fasádou a barevnými balkony"
+    },
+    {
+      "klic": "budova",
+      "popis": "Stavební práce – zateplení fasád",
+      "foto": "/foto/budova-fasada.jpg",
+      "alt": "Dlouhá třípodlažní budova s novou fasádou"
+    },
+    {
+      "klic": "drevostavba2",
+      "popis": "Stavební práce – stavby na klíč",
+      "foto": "/foto/drevostavba-2.jpg",
+      "alt": "Přízemní dřevostavba s dřevěným obkladem"
+    },
+    {
+      "klic": "sadrokarton",
+      "popis": "Stavební práce – sádrokarton",
+      "foto": "/foto/sadrokarton-podhled.jpg",
+      "alt": "Sádrokartonový podhled ve velké hale"
+    },
+    {
+      "klic": "zaklady",
+      "popis": "Stavební práce – spodní stavby",
+      "foto": "/foto/zemni-prace.jpg",
+      "alt": "Kamenná zeď a zemní úpravy na stavbě"
+    },
+    {
+      "klic": "krov",
+      "popis": "Stavební práce – pergoly, chaty a střechy",
+      "foto": "/foto/krov.jpg",
+      "alt": "Stavba dřevěného krovu"
+    },
+    {
+      "klic": "terasa",
+      "popis": "Stavební práce – terasy, ploty a garáže",
+      "foto": "/foto/terasa-drevena.jpg",
+      "alt": "Dřevěná terasa se zastřešením"
+    },
+    {
+      "klic": "interier",
+      "popis": "O nás",
+      "foto": "/foto/interier-jidelna.jpg",
+      "alt": "Zrekonstruovaná jídelna s dřevěnými stoly"
+    },
+    {
+      "klic": "bagr",
+      "popis": "Zemní práce – fotka nahoře, dlaždice na úvodu",
+      "foto": "/foto/bagr-e50.jpg",
+      "alt": "Pásový bagr Bobcat E50 na stavbě"
+    },
+    {
+      "klic": "bagr2",
+      "popis": "Půjčovna – Bobcat E50",
+      "foto": "/foto/bagr-e50-2.jpg",
+      "alt": "Bagr Bobcat E50 s vysunutým ramenem"
+    },
+    {
+      "klic": "bagr3",
+      "popis": "Zemní práce – galerie",
+      "foto": "/foto/bagr-e50-3.jpg",
+      "alt": "Bagr Bobcat E50 při práci na pozemku"
+    },
+    {
+      "klic": "novotny",
+      "popis": "Půjčovna – fotka nahoře, dlaždice na úvodu",
+      "foto": "/foto/nakladac-novotny.jpg",
+      "alt": "Smykem řízený nakladač Novotný B 961"
+    },
+    {
+      "klic": "novotny2",
+      "popis": "Půjčovna – Novotný B 961",
+      "foto": "/foto/nakladac-novotny-2.jpg",
+      "alt": "Nakladač Novotný B 961 se lžící"
+    },
+    {
+      "klic": "iveco",
+      "popis": "Půjčovna – Iveco",
+      "foto": "/foto/iveco.jpg",
+      "alt": "Nosič kontejnerů Iveco Eurocargo"
+    },
+    {
+      "klic": "iveco2",
+      "popis": "Zemní práce – galerie",
+      "foto": "/foto/iveco-2.jpg",
+      "alt": "Nosič kontejnerů Iveco z boku"
+    },
+    {
+      "klic": "xcmg",
+      "popis": "Půjčovna – XCMG XC938",
+      "foto": "/foto/nakladac-xcmg.jpg",
+      "alt": "Čelní kolový nakladač XCMG XC938"
+    },
+    {
+      "klic": "leseni",
+      "popis": "Lešení – fotka nahoře, dlaždice na úvodu",
+      "foto": "/foto/leseni.jpg",
+      "alt": "Rámové lešení na fasádě bytového domu"
+    },
+    {
+      "klic": "vrtaky",
+      "popis": "Půjčovna – příslušenství",
+      "foto": "/foto/zemni-vrtaky.jpg",
+      "alt": "Zemní vrtáky k vrtací jednotce"
+    },
+    {
+      "klic": "drtic",
+      "popis": "Drcení a štěrk – drtič",
+      "foto": "/foto/drtic.jpg",
+      "alt": "Mobilní čelisťový drtič RESTA"
+    },
+    {
+      "klic": "tridic",
+      "popis": "Drcení a štěrk – fotka nahoře, dlaždice na úvodu",
+      "foto": "/foto/tridic.jpg",
+      "alt": "Mobilní třídič RESTA na hromadě materiálu"
+    },
+    {
+      "klic": "kamenivo",
+      "popis": "Drcení a štěrk – štěrk a písek, dlaždice na úvodu",
+      "foto": "/foto/kamenivo.jpg",
+      "alt": "Kamenivo frakce 0/32 s metrem"
+    }
+  ]
+}

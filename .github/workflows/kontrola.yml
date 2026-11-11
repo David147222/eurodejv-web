@@ -1,0 +1,26 @@
+# Kontrola návrhu změn (pull request): web se musí sestavit a poptávkový formulář nesmí mít chybu v PHP.
+name: Kontrola
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kontrola:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Sestavit web
+        run: node build.js
+      - name: Sestavit zkušební web
+        run: node build.js
+        env:
+          ZKUSEBNI: 1
+          BASE: /eurodejv-web
+      - name: Zkontrolovat PHP
+        run: php -l src/poptavka.php && php -l admin/auth.php

@@ -1,0 +1,200 @@
+# Administrace webu eurodejv.cz (Decap CMS). Změny se uloží na GitHub a web se za 1–2 minuty sám nahraje na Wedos.
+# Přihlášení funguje přes admin/auth.php, takže až na Wedosu (na zkušební adrese GitHub Pages ne).
+backend:
+  name: github
+  repo: David147222/eurodejv-web
+  branch: main
+  base_url: https://eurodejv.cz
+  auth_endpoint: admin/auth.php
+  auth_scope: public_repo
+  commit_messages:
+    update: "Úprava: {{collection}} – {{slug}}"
+    uploadMedia: "Nová fotka: {{path}}"
+locale: cs
+media_folder: public/foto
+public_folder: /foto
+site_url: https://eurodejv.cz
+display_url: https://eurodejv.cz
+
+collections:
+  - name: pujcovna
+    label: Půjčovna (stroje a ceny)
+    description: Všechno, co se dá půjčit. Každá položka má na webu kartu s cenou a tlačítkem „Přidat do poptávky“.
+    files:
+      - name: pujcovna
+        label: Katalog půjčovny
+        file: content/pujcovna.json
+        fields:
+          - name: kategorie
+            label: Kategorie
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: klic, label: "Kód kategorie (neměnit)", widget: string }
+              - { name: nazev, label: "Název kategorie", widget: string }
+              - { name: popis, label: "Krátký popis kategorie", widget: string, required: false }
+              - name: polozky
+                label: Položky
+                widget: list
+                summary: "{{fields.nazev}} – {{fields.cena}}"
+                fields:
+                  - { name: nazev, label: "Název", widget: string }
+                  - { name: popis, label: "Popis (1–2 věty)", widget: text, required: false }
+                  - { name: parametry, label: "Parametry (každý zvlášť)", widget: list, required: false, field: { name: parametr, label: Parametr, widget: string } }
+                  - { name: cena, label: "Cena (např. 1 500 Kč/den)", widget: string, required: false, hint: "Prázdné = místo ceny se ukáže odkaz níže." }
+                  - { name: foto, label: "Fotka", widget: image, required: false, choose_url: false }
+                  - { name: dokument, label: "Návod (PDF)", widget: file, required: false, choose_url: false, media_folder: /public/dokumenty, public_folder: /dokumenty }
+                  - { name: odkaz, label: "Odkaz místo ceny", widget: string, required: false }
+                  - { name: odkaz_text, label: "Text odkazu", widget: string, required: false }
+
+  - name: ceniky
+    label: Ceníky služeb
+    description: Ceníky zemních prací, zateplení, drcení, lešení a materiálu. Ceny půjčovny jsou v sekci Půjčovna.
+    files:
+      - name: ceniky
+        label: Ceníky
+        file: content/ceniky.json
+        fields:
+          - name: ceniky
+            label: Ceníky
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: klic, label: "Kód ceníku (neměnit)", widget: string }
+              - { name: nazev, label: "Nadpis ceníku", widget: string }
+              - { name: poznamka, label: "Poznámka pod ceníkem", widget: string, required: false }
+              - name: polozky
+                label: Řádky
+                widget: list
+                summary: "{{fields.nazev}} – {{fields.cena}}"
+                fields:
+                  - { name: nazev, label: "Položka", widget: string }
+                  - { name: popis, label: "Upřesnění (menším písmem)", widget: string, required: false }
+                  - { name: cena, label: "Cena", widget: string }
+
+  - name: reference
+    label: Reference
+    files:
+      - name: reference
+        label: Reference (fotky zakázek)
+        file: content/reference.json
+        fields:
+          - name: reference
+            label: Skupiny referencí
+            widget: list
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: nazev, label: "Název", widget: string }
+              - { name: misto, label: "Místo (nepovinné)", widget: string, required: false }
+              - { name: rok, label: "Rok (nepovinné)", widget: string, required: false }
+              - { name: popis, label: "Krátký popis", widget: string, required: false }
+              - name: fotky
+                label: Fotky
+                widget: list
+                summary: "{{fields.alt}}"
+                fields:
+                  - { name: foto, label: "Fotka", widget: image, choose_url: false }
+                  - { name: alt, label: "Co je na fotce (pro Google a nevidomé)", widget: string, required: false }
+
+  - name: fotky
+    label: Fotky webu
+    description: Každá fotka je na webu použitá na jednom nebo více místech. Když ji tady vyměníte, změní se všude.
+    files:
+      - name: fotky
+        label: Všechny fotky
+        file: content/fotky.json
+        fields:
+          - name: fotky
+            label: Fotky
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.popis}}"
+            fields:
+              - { name: klic, label: "Kód fotky (neměnit)", widget: string }
+              - { name: popis, label: "Kde je použitá", widget: string }
+              - { name: foto, label: "Fotka", widget: image, choose_url: false }
+              - { name: alt, label: "Popisek fotky pro Google a nevidomé", widget: string, required: false, hint: "Co je na fotce, jednou větou. Při výměně fotky popisek upravte." }
+
+  - name: eu
+    label: Projekty EU
+    files:
+      - name: eu
+        label: Projekty spolufinancované EU
+        file: content/eu.json
+        fields:
+          - name: projekty
+            label: Projekty
+            widget: list
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: nazev, label: "Název projektu", widget: string }
+              - { name: popis, label: "Popis", widget: text }
+              - { name: obrazek, label: "Plakát", widget: image, choose_url: false }
+
+  - name: nastaveni
+    label: Kontakty a nastavení
+    files:
+      - name: nastaveni
+        label: Kontakty, firmy, patička
+        file: content/nastaveni.json
+        fields:
+          - { name: nazev, label: "Název", widget: string }
+          - { name: podnazev, label: "Podnázev (popisek loga)", widget: string }
+          - { name: domena, label: "Adresa webu", widget: string }
+          - { name: telefon, label: "Telefon", widget: string }
+          - { name: email, label: "E-mail (sem chodí i poptávky z webu)", widget: string }
+          - { name: adresa, label: "Adresa (řádky oddělte <br>)", widget: string }
+          - { name: gps, label: "GPS", widget: string }
+          - { name: upozorneni, label: "Upozornění nahoře na webu (prázdné = nezobrazí se)", widget: string, required: false }
+          - name: firmy
+            label: Firmy (obchodní údaje)
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: nazev, label: "Název firmy", widget: string }
+              - { name: sidlo, label: "Sídlo", widget: string }
+              - { name: ico, label: "IČO", widget: string }
+              - { name: dic, label: "DIČ", widget: string }
+              - { name: spisova_znacka, label: "Spisová značka", widget: string }
+              - { name: datova_schranka, label: "Datová schránka", widget: string }
+              - { name: jednatele, label: "Jednatelé", widget: string, required: false }
+          - { name: provozovatel, label: "Provozovatel webu (patička)", widget: string }
+          - name: certifikaty
+            label: Certifikáty (loga)
+            widget: list
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: nazev, label: "Název", widget: string }
+              - { name: logo, label: "Logo", widget: image, choose_url: false }
+          - name: weby_skupiny
+            label: Další weby skupiny (patička)
+            widget: list
+            required: false
+            summary: "{{fields.nazev}}"
+            fields:
+              - { name: nazev, label: "Název", widget: string }
+              - { name: odkaz, label: "Adresa", widget: string }
+          - { name: google_overeni, label: "Ověřovací kód Google Search Console (nepovinné)", widget: string, required: false, hint: "Vložte kód nebo celý řádek <meta ...> z Google Search Console (metoda Značka HTML)." }
+          - { name: seznam_overeni, label: "Ověřovací kód Seznam Webmaster (nepovinné)", widget: string, required: false, hint: "Vložte kód nebo celý řádek <meta ...> ze Seznam Webmaster." }
+
+  - name: stranky
+    label: Stránky
+    folder: content/stranky
+    format: json
+    extension: json
+    create: false
+    delete: false
+    identifier_field: nadpis
+    summary: "{{nadpis}}"
+    fields:
+      - { name: nadpis, label: "Název stránky (v záložce prohlížeče a ve vyhledávání)", widget: string, hint: "Krátce a výstižně. Web za něj sám přidá „· EuroDejv, stavební firma, Nové Syrovice“." }
+      - { name: popis, label: "Popis pro Google (1–2 věty)", widget: text, required: false, hint: "Ukazuje se pod odkazem ve vyhledávání. Ideálně 120–160 znaků." }
+      - { name: obsah, label: "Obsah stránky (HTML)", widget: code, default_language: html, output_code_only: true, allow_language_selection: false, hint: "Ceníky, půjčovna, reference a formulář se vkládají značkami jako {{cenik:leseni-montaz}}, {{pujcovna:stroje}} nebo {{formular:Lešení}}." }

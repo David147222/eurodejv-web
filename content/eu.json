@@ -1,0 +1,34 @@
+{
+  "projekty": [
+    {
+      "nazev": "Pořízení e-keys pro ubytovací zařízení Penzion Grasel",
+      "popis": "Projekt byl spolufinancován Evropskou unií. Cílem bylo kompletně nahradit všechny mechanické zámky v provozu penzionu Grasel elektromechanickými štítovými kováními pro odemykání kódem případně čipovou kartou RFID (včetně čtečky karet USB) – STAR Smart přes modul gateway.",
+      "obrazek": "/foto/eu/e-keys-penzion-grasel.png"
+    },
+    {
+      "nazev": "EuroDejv Invest – pořízení moderního konvektomatu a pánve pro penzion Grasel",
+      "popis": "Projekt byl spolufinancován Evropskou unií. Pořízena moderní gastronomická zařízení – konvektomat a multifunkční pánev pro provoz restaurace penzionu Grasel. Docílení šetrnější výroby pokrmů se zachováním vyšší míry živin a vlastní chuti ingrediencí.",
+      "obrazek": "/foto/eu/konvektomat-penzion-grasel.png"
+    },
+    {
+      "nazev": "Program Fotovoltaické systémy s/bez akumulace (FVE)",
+      "popis": "Projekt byl spolufinancován Evropskou unií. Cílem projektu v rámci programu „Fotovoltaické systémy s/bez akumulace“ je zvýhodněný úvěr na výstavbu fotovoltaické elektrárny včetně akumulace.",
+      "obrazek": "/foto/eu/fotovoltaika.png"
+    },
+    {
+      "nazev": "Záruka Elektromobilita – EuroDejv Invest s.r.o.",
+      "popis": "Cílem projektu je pořízení vozidla na elektrický pohon kategorie M1 – Volkswagen ID.7 kombi ID.7 Tourer Pro People (A1) 210 kW včetně dobíjecí stanice v rámci programu „Záruka Elektromobilita – I. Výzva“. Financováno Evropskou unií – NextGenerationEU, Národní plán obnovy.",
+      "obrazek": "/foto/eu/zaruka-elektromobilita.jpg"
+    },
+    {
+      "nazev": "Pořízení moderní nízkouhlíkové technologie EuroDejv Invest s.r.o.",
+      "popis": "Projekt je spolufinancován Evropskou unií z Evropského fondu pro regionální rozvoj, OP Podnikání a inovace pro konkurenceschopnost. Výstupem projektu je pořízení 4 elektromobilů s dobíjecí stanicí.",
+      "obrazek": "/foto/eu/nizkouhlikove-technologie.jpg"
+    },
+    {
+      "nazev": "Elektromobily a dobíjecí stanice",
+      "popis": "OP PIK, Nízkouhlíkové technologie Výzva III. Termín realizace 22. 8. 2017 – 30. 4. 2020, způsobilé výdaje 1 766 200 Kč, dotace 1 193 960,88 Kč.",
+      "obrazek": "/foto/eu/elektromobily-letak.jpg"
+    }
+  ]
+}

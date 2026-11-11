@@ -1,0 +1,68 @@
+{
+  "reference": [
+    {
+      "nazev": "Fasády a zateplení",
+      "misto": "",
+      "rok": "",
+      "popis": "Zateplení a nové fasády rodinných domů, bytových domů i firemních budov.",
+      "fotky": [
+        { "foto": "/foto/bytovy-dum-fasada.jpg", "alt": "Bytový dům s novou fasádou a barevnými balkony" },
+        { "foto": "/foto/dum-fasada.jpg", "alt": "Dvoupodlažní dům s novou bílou fasádou" },
+        { "foto": "/foto/budova-fasada.jpg", "alt": "Dlouhá třípodlažní budova s novou fasádou" },
+        { "foto": "/foto/rodinny-dum.jpg", "alt": "Přízemní rodinný dům s oranžovou fasádou" },
+        { "foto": "/foto/dum-oranzova-fasada.jpg", "alt": "Dům s oranžovou fasádou a garáží" },
+        { "foto": "/foto/dum-bila-fasada.jpg", "alt": "Přízemní dům s bílou fasádou" },
+        { "foto": "/foto/budova-zelena-fasada.jpg", "alt": "Přízemní budova se zelenou fasádou" },
+        { "foto": "/foto/budova-ulice.jpg", "alt": "Třípodlažní budova s novou fasádou u ulice" }
+      ]
+    },
+    {
+      "nazev": "Dřevostavby, pergoly a střechy",
+      "misto": "",
+      "rok": "",
+      "popis": "Dřevěné domy a fasády, krovy, pergoly a střechy.",
+      "fotky": [
+        { "foto": "/foto/drevostavba.jpg", "alt": "Patrový dřevěný dům s pergolou" },
+        { "foto": "/foto/drevostavba-2.jpg", "alt": "Přízemní dřevostavba s dřevěným obkladem" },
+        { "foto": "/foto/drevena-fasada.jpg", "alt": "Budova s dřevěnou fasádou a velkými okny" },
+        { "foto": "/foto/krov.jpg", "alt": "Stavba dřevěného krovu" },
+        { "foto": "/foto/terasa-drevena.jpg", "alt": "Dřevěná terasa se zastřešením" },
+        { "foto": "/foto/strecha.jpg", "alt": "Nová střecha z pálených tašek" },
+        { "foto": "/foto/pergola.jpg", "alt": "Dřevěná pergola u rodinného domu" },
+        { "foto": "/foto/konstrukce-strechy.jpg", "alt": "Dřevěná konstrukce střechy uvnitř haly" }
+      ]
+    },
+    {
+      "nazev": "Terasy, ploty a venkovní úpravy",
+      "misto": "",
+      "rok": "",
+      "popis": "Terasy, schodiště, ploty, kamenné zdi a úpravy okolí staveb.",
+      "fotky": [
+        { "foto": "/foto/lavka.jpg", "alt": "Dřevěná lávka se zábradlím" },
+        { "foto": "/foto/plot.jpg", "alt": "Plot s dřevěnými poli a kamennými sloupky" },
+        { "foto": "/foto/schody.jpg", "alt": "Schodiště z terasových prken" },
+        { "foto": "/foto/terasa-sklo.jpg", "alt": "Terasa s prosklenným zábradlím" },
+        { "foto": "/foto/jezirko.jpg", "alt": "Jezírko lemované kameny" },
+        { "foto": "/foto/opevneni.jpg", "alt": "Kamenné opěrné zdi ve svahu" },
+        { "foto": "/foto/kamenny-obklad.jpg", "alt": "Vstup do budovy s kamenným obkladem" },
+        { "foto": "/foto/kamen-fasada.jpg", "alt": "Fasáda s kamenným obkladem a cihlovými pilíři" }
+      ]
+    },
+    {
+      "nazev": "Interiéry a sádrokarton",
+      "misto": "",
+      "rok": "",
+      "popis": "Rekonstrukce interiérů, sádrokartonové podhledy, dřevěné obklady a sauny.",
+      "fotky": [
+        { "foto": "/foto/interier-jidelna.jpg", "alt": "Zrekonstruovaná jídelna s dřevěnými stoly" },
+        { "foto": "/foto/sadrokarton-podhled.jpg", "alt": "Sádrokartonový podhled ve velké hale" },
+        { "foto": "/foto/interier-dreveny.jpg", "alt": "Místnost s dřevěným obkladem a velkými okny" },
+        { "foto": "/foto/sal.jpg", "alt": "Sál s dřevěným stropem připravený pro hosty" },
+        { "foto": "/foto/sauna.jpg", "alt": "Dřevěná sauna s lavicemi" },
+        { "foto": "/foto/klenba.jpg", "alt": "Cihlová klenba po rekonstrukci" },
+        { "foto": "/foto/stavba-interier.jpg", "alt": "Rozestavěný interiér s dřevěným stropem" },
+        { "foto": "/foto/podkrovi.jpg", "alt": "Podkroví se střešním oknem a sádrokartonem" }
+      ]
+    }
+  ]
+}

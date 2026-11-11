@@ -1,0 +1,27 @@
+{
+  "_poznamka": "Menu nahoře (menu), dvě půlky webu s podmenu (sekce: Stavíme a Půjčovna) a odkazy v patičce (paticka). Stránka v sekci má v menu zvýrazněnou svou půlku.",
+  "menu": [
+    ["uvod", "Úvod"],
+    ["stavebni-prace", "Stavíme"],
+    ["pujcovna", "Půjčovna"],
+    ["reference", "Reference"],
+    ["o-nas", "O nás"],
+    ["kontakt", "Kontakt"]
+  ],
+  "sekce": {
+    "stavebni-prace": [
+      ["stavebni-prace", "Stavební práce"],
+      ["zatepleni-fasad", "Zateplení fasád"],
+      ["zemni-prace", "Zemní práce"],
+      ["drceni-a-material", "Drcení a štěrk"]
+    ],
+    "pujcovna": [
+      ["pujcovna", "Stroje a nářadí"],
+      ["leseni", "Lešení"]
+    ]
+  },
+  "paticka": [
+    ["projekty-eu", "Projekty spolufinancované EU"],
+    ["cookies", "Cookies a ochrana osobních údajů"]
+  ]
+}

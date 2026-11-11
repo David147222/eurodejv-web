@@ -1,0 +1,5 @@
+{
+  "nadpis": "Reference",
+  "popis": "Ukázky práce stavební firmy EuroDejv: fasády a zateplení, dřevostavby, pergoly a střechy, terasy a ploty, interiéry a sádrokarton.",
+  "obsah": "<section class=\"page-top\"><div class=\"in\"><span class=\"ey\">Reference</span><h1>Ukázky naší práce</h1><p class=\"lead\">Stavěli a rekonstruovali jsme rodinné domy, rekreační objekty, mateřské školky, panelové domy i továrny. Pracovali jsme také ve známém biatlonovém areálu v Novém Městě na Moravě. Kliknutím na fotku ji zvětšíte.</p></div></section>\n<section class=\"tight\"><div class=\"in\">{{reference}}</div></section>\n<section class=\"cta\"><div class=\"in\"><div><h2>Plánujete stavbu nebo potřebujete techniku?</h2><p>Zavolejte nám, nebo pošlete poptávku. Ozveme se vám co nejdřív.</p></div><div class=\"bt\"><a class=\"btn wh\" href=\"{{tel}}\">Zavolat {{telefon}}</a><a class=\"btn ol\" href=\"/kontakt/#poptavka\">Poslat poptávku</a></div></div></section>\n"
+}
