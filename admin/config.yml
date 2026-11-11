@@ -35,6 +35,8 @@ collections:
               - { name: klic, label: "Kód kategorie (neměnit)", widget: string }
               - { name: nazev, label: "Název kategorie", widget: string }
               - { name: popis, label: "Krátký popis kategorie", widget: string, required: false }
+              - { name: odkaz, label: "Odkaz u nadpisu kategorie (nepovinné)", widget: string, required: false, hint: "Např. /leseni/" }
+              - { name: odkaz_text, label: "Text odkazu u nadpisu", widget: string, required: false }
               - name: polozky
                 label: Položky
                 widget: list

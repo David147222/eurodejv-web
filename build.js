@@ -62,7 +62,7 @@ function polozka(p) {
 function pujcovnaKat(klic, nadpis = false) {
   const k = PUJ.find(k => k.klic === klic);
   if (!k) throw new Error('Chybí kategorie půjčovny: ' + klic);
-  const head = nadpis ? `<div class="kat-head"><h2>${esc(k.nazev)}</h2>${k.popis ? `<p>${esc(k.popis)}</p>` : ''}</div>` : '';
+  const head = nadpis ? `<div class="kat-head"><h2>${esc(k.nazev)}</h2>${k.popis ? `<p>${esc(k.popis)}</p>` : ''}${k.odkaz ? `<a class="kat-odkaz" href="${esc(k.odkaz)}">${esc(k.odkaz_text || 'Více')} →</a>` : ''}</div>` : '';
   return `${head}<div class="items${klic === 'stroje' ? ' velke' : ''}">${k.polozky.map(polozka).join('')}</div>`;
 }
 
@@ -136,11 +136,11 @@ function vlozky(html) {
 // Popisek fotky (alt) z content/fotky.json se doplní do prázdného alt="" u <img src="{{foto:kod}}">
 function fotky(html) {
   html = html.replace(/<img\b[^>]*>/g, tag => {
-    const k = (tag.match(/\bsrc="\{\{foto:([a-z0-9_]+)\}\}"/) || [])[1];
+    const k = (tag.match(/\bsrc="\{\{foto:([a-z0-9_-]+)\}\}"/) || [])[1];
     const a = k && FOTO[k] && FOTO[k].alt;
     return a ? tag.replace(/\balt=""/, `alt="${esc(a)}"`) : tag;
   });
-  return html.replace(/\{\{foto:([a-z0-9_]+)\}\}/g, (m, k) => {
+  return html.replace(/\{\{foto:([a-z0-9_-]+)\}\}/g, (m, k) => {
     if (!FOTO[k]) throw new Error('Chybí fotka: ' + k);
     return FOTO[k].foto;
   });
@@ -249,7 +249,7 @@ function page(id, p, opt = {}) {
   const title = id === 'uvod' ? `${S.nazev} – ${p.nadpis}` : `${p.nadpis} · ${S.nazev}${opt.noindex ? '' : ', ' + SEO.misto}`;
   const self = S.domena + url(id);
   const { html: obsah, hero, bg } = obrazky(fotky(vlozky(p.obsah)));
-  const ogKod = (p.obsah.match(/\{\{foto:[a-z0-9_]+\}\}/g) || []).map(s => s.slice(7, -2)).find(k => FOTO[k]) || 'hero';
+  const ogKod = (p.obsah.match(/\{\{foto:[a-z0-9_-]+\}\}/g) || []).map(s => s.slice(7, -2)).find(k => FOTO[k]) || 'hero';
   const notice = S.upozorneni ? `<div class="demo">${S.upozorneni}</div>` : '';
   const test = ZKUSEBNI ? '<div class="demo">Zkušební verze nového webu. Platný web je zatím na <a href="https://eurodejv.cz">eurodejv.cz</a>.</div>' : '';
   const hlava = [

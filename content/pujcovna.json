@@ -123,7 +123,8 @@
         },
         {
           "nazev": "Svahová naklápěcí lžíce",
-          "cena": "1 000 Kč/den"
+          "cena": "1 000 Kč/den",
+          "foto": "/foto/pujcovna-svahova-lzice.jpg"
         }
       ]
     },
@@ -271,7 +272,8 @@
           "parametry": [
             "délka 100 m"
           ],
-          "cena": "500 Kč/den"
+          "cena": "500 Kč/den",
+          "foto": "/foto/pujcovna-kabel.svg"
         }
       ]
     },
@@ -291,11 +293,15 @@
         {
           "nazev": "Pojízdná hliníková věž BoSS",
           "popis": "Na kratší práce ve výšce, venku i uvnitř.",
-          "cena": "",
-          "odkaz": "/leseni/#cenik",
-          "odkaz_text": "Ceník lešení"
+          "parametry": [
+            "cena za 1 kostku věže"
+          ],
+          "cena": "500 Kč/den",
+          "foto": "/foto/leseni-boss.jpg"
         }
-      ]
+      ],
+      "odkaz": "/leseni/",
+      "odkaz_text": "Vše o lešení, montáž a ceník"
     }
   ]
 }

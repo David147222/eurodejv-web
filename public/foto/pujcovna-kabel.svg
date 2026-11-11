@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Kabel na bubnu (ilustrace)">
+  <rect width="600" height="400" fill="#fff"/>
+  <ellipse cx="300" cy="352" rx="210" ry="12" fill="#eee9e2"/>
+  <path d="M160 350 L245 205 M330 350 L245 205" stroke="#6b6b6b" stroke-width="16" stroke-linecap="round"/>
+  <path d="M140 350 H180 M310 350 H350" stroke="#4a4a4a" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="245" cy="200" r="132" fill="#2e2e2e"/>
+  <circle cx="245" cy="200" r="121" fill="#3a3a3a"/>
+  <g fill="none" stroke-width="10">
+    <circle cx="245" cy="200" r="111" stroke="#e2781f"/>
+    <circle cx="245" cy="200" r="100" stroke="#d26c17"/>
+    <circle cx="245" cy="200" r="89" stroke="#e2781f"/>
+    <circle cx="245" cy="200" r="78" stroke="#d26c17"/>
+    <circle cx="245" cy="200" r="67" stroke="#e2781f"/>
+  </g>
+  <circle cx="245" cy="200" r="56" fill="#2e2e2e"/>
+  <circle cx="245" cy="200" r="24" fill="#a8a8a8"/>
+  <circle cx="245" cy="200" r="9" fill="#2e2e2e"/>
+  <path d="M356 200 C 430 200, 400 300, 470 296" stroke="#e2781f" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <g transform="translate(468 296) rotate(-6)">
+    <rect x="0" y="-15" width="24" height="30" rx="4" fill="#333"/>
+    <rect x="22" y="-27" width="62" height="54" rx="11" fill="#a3131d"/>
+    <rect x="34" y="-27" width="6" height="54" fill="#8a1018"/>
+    <rect x="84" y="-21" width="13" height="42" rx="3" fill="#7d0e16"/>
+  </g>
+</svg>

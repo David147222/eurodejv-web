@@ -72,6 +72,12 @@ ul.check li::before{content:"";position:absolute;left:2px;top:.45em;width:14px;h
 .split{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
 .split.rev>:first-child{order:2}
 .split img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+/* Lešení: dva druhy s nákresem */
+.lesy{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:22px}
+.les{display:grid;grid-template-columns:minmax(120px,36%) 1fr;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.les-im{display:flex;align-items:center;justify-content:center;background:#fff;border-right:1px solid var(--line);padding:14px}
+.les-im img{width:100%;height:auto;max-height:340px;object-fit:contain}
+.les .tx{padding:20px 22px 22px}.les h3{font-size:1.25rem}.les p{color:var(--muted)}.les ul.check{margin-top:10px}.les .dal{margin:14px 0 0;font-weight:600}
 .split h3{margin-top:26px}.split ol{padding-left:22px;margin:14px 0 0}.split ol li{margin-top:6px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pair img{aspect-ratio:1;object-fit:cover;border-radius:8px}
 
@@ -179,6 +185,7 @@ dl.spec dt{color:var(--muted)}dl.spec dd{margin:0;font-weight:600}
 .chips a:hover{border-color:var(--red);color:var(--red)}
 .kat{padding-top:44px}
 .kat-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:16px}.kat-head p{margin:0;color:var(--muted)}
+.kat-odkaz{margin-left:auto;font-weight:600;white-space:nowrap}
 .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px}
 .items.velke{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
 .item{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:box-shadow .15s,border-color .15s}
@@ -245,6 +252,8 @@ body.lb-on{overflow:hidden}
   footer .in{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
+  .kat-odkaz{margin-left:0}
+  .les{grid-template-columns:1fr}.les-im{border-right:0;border-bottom:1px solid var(--line);padding:12px}.les-im img{width:auto;max-height:260px}.les .tx{padding:14px 14px 16px}.les h3{font-size:1.1rem}
   body{font-size:16.5px;padding-bottom:72px}
   .in{padding:0 16px}
   section{padding:44px 0}
