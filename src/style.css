@@ -154,10 +154,18 @@ dl.spec dt{color:var(--muted)}dl.spec dd{margin:0;font-weight:600}
 .links{display:flex;flex-wrap:wrap;gap:10px}.links a{padding:10px 16px;border:1px solid var(--line);border-radius:6px;text-decoration:none;font-weight:600}
 
 /* Podmenu jedné půlky webu (Stavíme / Půjčovna) */
+/* Velké dlaždice, aby přepínač zákazník nepřehlédl; aktuální stránka je červená */
 .sub{background:var(--bg2);border-bottom:1px solid var(--line)}
-.sub ul{display:flex;gap:4px;list-style:none;margin:0;padding:8px 0;overflow-x:auto;scrollbar-width:none}
-.sub a{display:block;padding:7px 14px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;white-space:nowrap}
-.sub a:hover{background:#fff;color:var(--ink)}.sub a.on{background:var(--red);color:#fff}
+.sub .in{display:flex;align-items:center;gap:20px;padding-top:14px;padding-bottom:14px}
+.sub-t{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--red);white-space:nowrap}
+.sub ul{flex:1;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:12px;list-style:none;margin:0;padding:0}
+.sub ul.n2{max-width:760px}
+.sub a{display:flex;align-items:center;gap:12px;height:100%;padding:12px 16px;background:#fff;border:2px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.05);transition:border-color .15s,box-shadow .15s}
+.sub a svg{flex:none;width:32px;height:32px;color:var(--red)}
+.sub a b{display:block;font-size:1.08rem;line-height:1.25}
+.sub a small{display:block;margin-top:2px;font-size:.86rem;color:var(--muted);line-height:1.3}
+.sub a:hover{border-color:var(--red);color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.sub a.on{background:var(--red);border-color:var(--red);color:#fff}.sub a.on svg,.sub a.on small{color:#fff}
 
 /* Úvod: nadpis a dvě půlky webu */
 .intro{padding:40px 0 30px}
@@ -252,6 +260,8 @@ body.lb-on{overflow:hidden}
   footer .in{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
+  .sub .in{padding-top:10px;padding-bottom:10px}.sub-t{display:none}.sub ul{grid-auto-flow:row;grid-template-columns:1fr 1fr;gap:8px}
+  .sub a{gap:8px;padding:9px 10px}.sub a svg{width:24px;height:24px}.sub a b{font-size:.98rem}.sub a small{font-size:.78rem}
   .kat-odkaz{margin-left:0}
   .les{grid-template-columns:1fr}.les-im{border-right:0;border-bottom:1px solid var(--line);padding:12px}.les-im img{width:auto;max-height:260px}.les .tx{padding:14px 14px 16px}.les h3{font-size:1.1rem}
   body{font-size:16.5px;padding-bottom:72px}
