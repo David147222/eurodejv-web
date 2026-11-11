@@ -1,0 +1,48 @@
+{
+  "nazev": "EuroDejv",
+  "podnazev": "Stavební firma na Vysočině",
+  "domena": "https://eurodejv.cz",
+  "telefon": "+420 775 704 706",
+  "email": "info@eurodejv.cz",
+  "adresa": "Nové Syrovice 141<br>675 41 Nové Syrovice",
+  "gps": "49.0170839N, 15.7719169E",
+  "upozorneni": "",
+  "firmy": [
+    {
+      "nazev": "EuroDejv s.r.o.",
+      "sidlo": "Na Folimance 2155/15, Vinohrady, 120 00 Praha 2",
+      "ico": "283 27 144",
+      "dic": "CZ28327144",
+      "spisova_znacka": "61532 C, Krajský soud v Brně",
+      "datova_schranka": "2stc3p9",
+      "jednatele": "David Šindelář, Jana Šindelářová"
+    },
+    {
+      "nazev": "EuroDejv Invest s.r.o.",
+      "sidlo": "Nové Syrovice 141, 675 41 Nové Syrovice",
+      "ico": "277 22 015",
+      "dic": "CZ27722015",
+      "spisova_znacka": "C 54625/KSBR, Krajský soud v Brně",
+      "datova_schranka": "pzi4ycp",
+      "jednatele": "David Šindelář, Jana Šindelářová"
+    }
+  ],
+  "provozovatel": "EuroDejv s.r.o.",
+  "certifikaty": [
+    { "nazev": "Promat", "logo": "/foto/certifikaty/promat.png" },
+    { "nazev": "Baumit", "logo": "/foto/certifikaty/baumit.png" },
+    { "nazev": "Hilti", "logo": "/foto/certifikaty/hilti.png" },
+    { "nazev": "Profi stavební hmoty", "logo": "/foto/certifikaty/profi.png" },
+    { "nazev": "JUB Jupol", "logo": "/foto/certifikaty/jupol.png" },
+    { "nazev": "4T", "logo": "/foto/certifikaty/4t.png" },
+    { "nazev": "Satjam", "logo": "/foto/certifikaty/satjam.png" },
+    { "nazev": "AMF", "logo": "/foto/certifikaty/amf.png" },
+    { "nazev": "Knauf", "logo": "/foto/certifikaty/knauf.png" }
+  ],
+  "weby_skupiny": [
+    { "nazev": "Panelcz – ubytování u Vranovské přehrady", "odkaz": "https://panelcz.cz" },
+    { "nazev": "Penzion Grasel", "odkaz": "https://penziongrasel.cz" }
+  ],
+  "google_overeni": "",
+  "seznam_overeni": ""
+}

@@ -1,0 +1,98 @@
+{
+  "kategorie": [
+    {
+      "klic": "stroje",
+      "nazev": "Stavební stroje",
+      "popis": "Velká technika na den i na delší dobu.",
+      "polozky": [
+        {
+          "nazev": "Kompaktní rýpadlo Bobcat E50",
+          "popis": "Pásový otočný bagr 5 t. Kabina nepřečnívá přes obrys stroje, takže se hodí i do stísněných prostor. Snímač zatížení průběžně přizpůsobuje výkon práci.",
+          "parametry": ["hmotnost 4 980 kg", "motor Kubota 35,4 kW", "přídavná hydraulika 138,5 l/min", "šířka 1 960 mm, výška 2 532 mm", "rychloupínák Lehnhoff MS03"],
+          "cena": "5 250 Kč/den",
+          "foto": "/foto/bagr-e50-2.jpg"
+        },
+        {
+          "nazev": "Smykem řízený nakladač Novotný B 961",
+          "popis": "Dvourychlostní nakladač, tzv. bobek. Rychlý, s vysokou nosností, spolehlivou hydraulikou a ovládáním joysticky. V základu je hladká čelní lopata.",
+          "parametry": ["hmotnost 3 580 kg", "nosnost 1 250 kg", "základní lopata 0,6 m³", "výška 2 070 mm, šířka 1 790 mm"],
+          "cena": "4 250 Kč/den",
+          "foto": "/foto/nakladac-novotny-2.jpg"
+        },
+        {
+          "nazev": "Čelní kolový nakladač XCMG XC938",
+          "popis": "Velký kolový nakladač se zubatou lopatou, vybavený pro jízdu po silnici.",
+          "parametry": ["provozní hmotnost 11 000 kg", "lopata 2,5 m³ se zuby", "nosnost (zdvih) 4 000 kg", "trhací síla 110 kN", "překlopná výška lopaty 3 890 mm", "motor 99 kW (135 koní)", "automatické mazání, couvací kamera, LED světla, registrační značka"],
+          "cena": "13 000 Kč/den",
+          "foto": "/foto/nakladac-xcmg.jpg"
+        },
+        {
+          "nazev": "Nosič kontejnerů Iveco Eurocargo 120-190 (6,5 t)",
+          "popis": "Moderní a úsporný kontejnerový nákladní automobil, který se snadno ovládá.",
+          "parametry": ["kontejnerová valníková vana", "kontejner výška 0,5 m, délka 4,5 m", "kontejner výška 0,8 m, délka 4,5 m", "kontejner výška 2 m"],
+          "cena": "15 000 Kč/den",
+          "foto": "/foto/iveco.jpg"
+        }
+      ]
+    },
+    {
+      "klic": "bagr",
+      "nazev": "Příslušenství k bagru",
+      "popis": "K bagru Bobcat E50, na rychloupínák Lehnhoff MS03.",
+      "polozky": [
+        { "nazev": "Prosévací lopata MB-S10", "parametry": ["síta 60 × 60 a 20 × 20 mm"], "cena": "2 900 Kč/den" },
+        { "nazev": "Bourací kladivo Fine 4X", "cena": "3 900 Kč/den" },
+        { "nazev": "Prstový drapák DGU 20-7 s rotátorem", "popis": "Na kameny a dřevo.", "cena": "2 950 Kč/den" },
+        { "nazev": "Vrtací jednotka HT 5 k zemním vrtákům", "parametry": ["vrtáky 200, 300 a 400 mm", "prodloužení 500 a 1 000 mm"], "cena": "1 500 Kč/den", "foto": "/foto/zemni-vrtaky.jpg" },
+        { "nazev": "Fréza na pařezy FP250/65", "cena": "2 650 Kč/den" },
+        { "nazev": "Štípací kužel", "parametry": ["průměr 230 mm"], "cena": "2 500 Kč/den" },
+        { "nazev": "Samosvorné kleště na betonové bloky", "parametry": ["nosnost 3 000 kg"], "cena": "2 950 Kč/den" },
+        { "nazev": "Lžíce se zuby", "parametry": ["šířka 30, 40, 50, 60 nebo 100 cm"], "cena": "500 Kč/den" },
+        { "nazev": "Svahová naklápěcí lžíce", "cena": "1 000 Kč/den" }
+      ]
+    },
+    {
+      "klic": "nakladac",
+      "nazev": "Příslušenství k nakladači",
+      "popis": "K nakladači Novotný B 961.",
+      "polozky": [
+        { "nazev": "Paletizační vidle", "parametry": ["délka 120 cm", "nosnost 2 000 kg"], "cena": "350 Kč/den" },
+        { "nazev": "Zubová kombinovaná lopata (klapačka)", "parametry": ["šíře 200 cm"], "cena": "2 000 Kč/den" },
+        { "nazev": "Míchací lopata ML 300", "popis": "S elektroventilem a výpustnou hadicí.", "cena": "3 500 Kč/den" }
+      ]
+    },
+    {
+      "klic": "mensi-stroje",
+      "nazev": "Menší stroje",
+      "popis": "Hutnění, omítání, broušení podlah, úklid a elektřina na stavbě.",
+      "polozky": [
+        { "nazev": "Reverzní vibrační deska Bomag BPR 70/70 DE", "parametry": ["580 kg", "síla úderu 70 kN", "nafta", "pracovní šíře 700 mm"], "cena": "1 500 Kč/den" },
+        { "nazev": "Vibrační pěch BT 65", "parametry": ["68 kg", "síla úderu 17 kN", "benzín"], "cena": "750 Kč/den" },
+        { "nazev": "Omítačka PFT G4X Smart", "parametry": ["5,5 kW, 3 fáze 400 V, jištění 25 A", "dvourychlostní převodovka", "výkon max. 55 l/min", "1 200 × 720 × 1 530 mm, 285 kg"], "cena": "750 Kč/den" },
+        { "nazev": "Podlahová bruska Husqvarna PG 510", "parametry": ["tříkotoučová", "4 kW, 380–420 V, 3 fáze", "133 kg, 540 ot./min"], "cena": "1 990 Kč/den", "dokument": "/dokumenty/navod-bruska-pg-510.pdf" },
+        { "nazev": "Průmyslový vysavač Husqvarna T 4000", "parametry": ["106 kg", "4 kW, 3 × 400 V", "400 m³/h"], "cena": "990 Kč/den", "dokument": "/dokumenty/navod-vysavac-t-4000.pdf" },
+        { "nazev": "Separátor prachu Husqvarna C 3000", "parametry": ["22 kg", "odsávání prachu a kalu", "590 × 730 × 1 580 mm"], "cena": "450 Kč/den", "dokument": "/dokumenty/navod-separator-c-3000.pdf" },
+        { "nazev": "Elektrocentrála Grizzli 24000", "parametry": ["24 kVA (výkon 22 kVA)", "400/220 V", "benzín, spotřeba 7,4 l/hod", "97 dB, 197 kg"], "cena": "1 200 Kč/den" }
+      ]
+    },
+    {
+      "klic": "drceni",
+      "nazev": "Drtič a třídič",
+      "popis": "Na suť, beton, kámen i zeminu. Podrtit a vytřídit vám ji můžeme i sami.",
+      "polozky": [
+        { "nazev": "Kontejnerový drtič RESTA CK4", "popis": "Čelisťový drtič 470 × 330 s magnetickým separátorem, v provedení pro nosič kontejnerů.", "parametry": ["největší kus 400 × 300 mm", "frakce 0–90 mm", "výkon 10–30 t/h"], "cena": "10 000 Kč/den", "foto": "/foto/drtic.jpg" },
+        { "nazev": "Kontejnerový třídič RESTA TK6-3", "popis": "Třídič 1000 × 3000 s plynulou regulací frekvence a dálkově ovládaným hruboroštem.", "parametry": ["3 frakce + nadroštná", "výkon 70–140 t/h"], "cena": "10 000 Kč/den", "foto": "/foto/tridic.jpg" },
+        { "nazev": "Propojovací kabel drtič – třídič", "parametry": ["délka 100 m"], "cena": "500 Kč/den" }
+      ]
+    },
+    {
+      "klic": "leseni",
+      "nazev": "Lešení",
+      "popis": "Půjčíme, nebo i postavíme a rozebereme.",
+      "polozky": [
+        { "nazev": "Rámové fasádní lešení MJ-Gerüst UNI 70/100", "popis": "Skladem přibližně 2 000 m². Účtujeme jen zastavěnou plochu.", "cena": "", "foto": "/foto/leseni.jpg", "odkaz": "/leseni/#cenik", "odkaz_text": "Ceník podle plochy" },
+        { "nazev": "Pojízdná hliníková věž BoSS", "popis": "Na kratší práce ve výšce, venku i uvnitř.", "cena": "", "odkaz": "/leseni/#cenik", "odkaz_text": "Ceník lešení" }
+      ]
+    }
+  ]
+}

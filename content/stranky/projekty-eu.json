@@ -1,0 +1,5 @@
+{
+  "nadpis": "Projekty spolufinancované EU",
+  "popis": "Projekty firem EuroDejv s.r.o. a EuroDejv Invest s.r.o. spolufinancované Evropskou unií: elektromobily, fotovoltaika a vybavení Penzionu Grasel.",
+  "obsah": "<section class=\"page-top\"><div class=\"in\"><span class=\"ey\">Evropská unie</span><h1>Projekty spolufinancované EU</h1><p class=\"lead\">Přehled našich projektů, na které jsme získali podporu z fondů Evropské unie. Kliknutím na plakát ho zvětšíte.</p></div></section>\n<section class=\"tight\"><div class=\"in\">{{eu}}</div></section>\n"
+}

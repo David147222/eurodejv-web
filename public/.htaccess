@@ -1,0 +1,51 @@
+# EuroDejv - nastaveni pro Wedos (Apache). Plati az po prepnuti domeny eurodejv.cz na novy web (jen s Davidovym souhlasem).
+RewriteEngine On
+# www.eurodejv.cz -> eurodejv.cz a http -> https
+# Pozor (Wedos): web lezi v podslozce domains/eurodejv.cz, takze %{REQUEST_URI} obsahuje i "/domains/eurodejv.cz/".
+# Cesta se proto bere ze zachycene casti adresy ($1), stejne jako na panelcz.cz (zjisteno 9. 11. 2026).
+RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://eurodejv.cz/$1 [L,R=301]
+RewriteCond %{THE_REQUEST} \s/domains/eurodejv\.cz/(\S*)\s [NC]
+RewriteRule ^ https://eurodejv.cz/%1 [L,R=301]
+# Neexistujici adresa: stranka "Tahle stranka tu neni" (vyhledavace ji neindexuji)
+ErrorDocument 404 /404.html
+DirectoryIndex index.html index.php
+AddType font/woff2 .woff2
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/svg+xml "access plus 30 days"
+ExpiresByType text/css "access plus 30 days"
+ExpiresByType application/javascript "access plus 30 days"
+ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<Files "oauth-config.php">
+Require all denied
+</Files>
+# Zaloha stareho WordPressu (pokud se pri prepnuti presune do _stary-web) neni verejne pristupna
+RewriteRule ^_stary-web(/|$) - [F,L]
+# Presmerovani starych adres puvodniho webu eurodejv.cz (stav 11. 11. 2026)
+RewriteRule ^(index|stavebni-firma)/stavba/?$ https://%{HTTP_HOST}/stavebni-prace/ [R=301,L]
+RewriteRule ^(index|stavebni-firma)/zemni-prace/?$ https://%{HTTP_HOST}/zemni-prace/ [R=301,L]
+RewriteRule ^(index|stavebni-firma)/leseni/?$ https://%{HTTP_HOST}/leseni/ [R=301,L]
+RewriteRule ^(index|stavebni-firma)/pujcovna/?$ https://%{HTTP_HOST}/pujcovna/ [R=301,L]
+RewriteRule ^(index|stavebni-firma)/drceni-stavebni-suti-betonu-a-kamene/?$ https://%{HTTP_HOST}/drceni-a-material/ [R=301,L]
+RewriteRule ^index/prodej-sterku-pisku-zeminy-a-reciklatu-a_kopie/?$ https://%{HTTP_HOST}/drceni-a-material/#material [R=301,L,NE]
+RewriteRule ^index/dotace_v2/?$ https://%{HTTP_HOST}/zatepleni-fasad/ [R=301,L]
+RewriteRule ^wp-content/uploads/2025/08/Odpovednost-za-stroj_\.pdf$ https://%{HTTP_HOST}/dokumenty/odpovednost-za-stroj.pdf [R=301,L]
+RewriteRule ^wp-content/uploads/2024/08/manual-Podlahova-bruska-PG-510\.pdf$ https://%{HTTP_HOST}/dokumenty/navod-bruska-pg-510.pdf [R=301,L]
+RewriteRule ^wp-content/uploads/2024/08/manual-T-4000\.pdf$ https://%{HTTP_HOST}/dokumenty/navod-vysavac-t-4000.pdf [R=301,L]
+RewriteRule ^wp-content/uploads/2024/08/manual-separator-C-3000\.pdf$ https://%{HTTP_HOST}/dokumenty/navod-separator-c-3000.pdf [R=301,L]
+# Nedodelane a zrusene stranky stareho webu (prodej, e-shop, kosik, ostatni) a zbytky WordPressu -> uvod
+RewriteRule ^(index|stavebni-firma)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
+RewriteRule ^(prodej|eshop|kosik|pokladna|muj-ucet)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
+RewriteRule ^(wp-content|wp-admin|wp-includes|wp-json|feed)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
+RewriteRule ^(wp-login\.php|xmlrpc\.php)$ https://%{HTTP_HOST}/ [R=301,L]
+# Fotky webu smi nacist i jine weby
+<IfModule mod_headers.c>
+<FilesMatch "\.(jpe?g|png|webp)$">
+Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+</IfModule>

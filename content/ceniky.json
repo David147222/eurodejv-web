@@ -1,0 +1,294 @@
+{
+  "ceniky": [
+    {
+      "klic": "zatepleni",
+      "nazev": "Zateplení fasády",
+      "poznamka": "Orientační cena bez DPH. Přesnou cenu spočítáme podle vašeho domu.",
+      "polozky": [
+        {
+          "nazev": "Kompletní zateplení fasády",
+          "popis": "příklad: včetně lešení, fasádní polystyren EPS tloušťky 160 mm",
+          "cena": "cca 2 000 Kč/m²"
+        }
+      ]
+    },
+    {
+      "klic": "zemni-technika",
+      "nazev": "Základní ceník – technika",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Smykem řízený nakladač Novotný B961",
+          "popis": "výkon motoru 55 kW, hmotnost 3 580 kg, objem lopaty 0,6 m³",
+          "cena": "1 150 Kč/hod"
+        },
+        {
+          "nazev": "Vysokozdvižný vozík (ještěrka)",
+          "popis": "",
+          "cena": "1 050 Kč/hod"
+        },
+        {
+          "nazev": "Iveco – hákový nosič kontejnerů 6,5 t",
+          "popis": "",
+          "cena": "800 Kč/hod + km"
+        },
+        {
+          "nazev": "Kompaktní rýpadlo 5 t – pásový bagr Bobcat E50",
+          "popis": "zubaté lžíce 30, 40, 50, 60 a 100 cm, zapůjčení jedné lžíce k bagru v ceně",
+          "cena": "1 350 Kč/hod"
+        },
+        {
+          "nazev": "Čelní kolový nakladač XCMG XC938",
+          "popis": "11 000 kg, zubatá lžíce 2,5 m³",
+          "cena": "1 650 Kč/hod"
+        }
+      ]
+    },
+    {
+      "klic": "zemni-prislusenstvi",
+      "nazev": "Příslušenství",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Rypadlo 5 t – bourací kladivo Fine 4X",
+          "popis": "200 kg",
+          "cena": "+ 750 Kč/hod"
+        },
+        {
+          "nazev": "Rypadlo 5 t – svahová naklápěcí lžíce",
+          "popis": "",
+          "cena": "+ 200 Kč/hod"
+        },
+        {
+          "nazev": "Rypadlo 5 t – prosévací lopata na třídění zeminy",
+          "popis": "",
+          "cena": "+ 650 Kč/hod"
+        },
+        {
+          "nazev": "Míchací lopata ML 300",
+          "popis": "s elektroventilem a výpustnou hadicí",
+          "cena": "+ 390 Kč/hod"
+        },
+        {
+          "nazev": "Nákladní automobil Iveco – zapůjčení kontejneru",
+          "popis": "více typů",
+          "cena": "250 Kč/den"
+        }
+      ]
+    },
+    {
+      "klic": "drceni-prace",
+      "nazev": "Drcení a třídění u vás",
+      "poznamka": "Orientační ceny bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Drcení",
+          "popis": "stavební suť, beton, kámen",
+          "cena": "100–150 Kč/t"
+        },
+        {
+          "nazev": "Třídění",
+          "popis": "4 frakce",
+          "cena": "95–120 Kč/t"
+        }
+      ]
+    },
+    {
+      "klic": "leseni-pronajem",
+      "nazev": "Pronájem rámového lešení",
+      "poznamka": "Účtujeme jen zastavěnou plochu lešení. Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "do 300 m²",
+          "popis": "",
+          "cena": "5,50 Kč/m²"
+        },
+        {
+          "nazev": "od 300 do 1 000 m²",
+          "popis": "",
+          "cena": "3,50 Kč/m²"
+        },
+        {
+          "nazev": "nad 1 000 m²",
+          "popis": "",
+          "cena": "2,50 Kč/m²"
+        },
+        {
+          "nazev": "Pojízdné hliníkové lešení BoSS",
+          "popis": "",
+          "cena": "500 Kč/kostka/den"
+        }
+      ]
+    },
+    {
+      "klic": "leseni-montaz",
+      "nazev": "Montáž a demontáž",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Montáž rámového lešení",
+          "popis": "",
+          "cena": "120–150 Kč/m²"
+        },
+        {
+          "nazev": "Demontáž rámového lešení",
+          "popis": "",
+          "cena": "95–125 Kč/m²"
+        },
+        {
+          "nazev": "Ochranná síť",
+          "popis": "",
+          "cena": "75 Kč/m²"
+        },
+        {
+          "nazev": "Pronájem bez montáže a demontáže",
+          "popis": "jednorázový poplatek",
+          "cena": "65 Kč/m²"
+        }
+      ]
+    },
+    {
+      "klic": "leseni-doprava",
+      "nazev": "Doprava a další poplatky",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Doprava Iveco 12 t",
+          "popis": "cca 100 m² lešení",
+          "cena": "35 Kč/km"
+        },
+        {
+          "nazev": "Nakládka a vykládka",
+          "popis": "100 m² = cca 4 hodiny",
+          "cena": "500 Kč/hod"
+        },
+        {
+          "nazev": "Čištění znečištěného lešení",
+          "popis": "účtuje se při vrácení znečištěného lešení",
+          "cena": "650 Kč/hod"
+        },
+        {
+          "nazev": "Nevrácené či poškozené díly",
+          "popis": "",
+          "cena": "dle ceníku dílů výrobce"
+        }
+      ]
+    },
+    {
+      "klic": "material-kamenivo",
+      "nazev": "Štěrk, písek a zemina",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Písek 0/4",
+          "popis": "",
+          "cena": "410 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 4/8",
+          "popis": "",
+          "cena": "990 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 8/16",
+          "popis": "",
+          "cena": "950 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 16/32",
+          "popis": "",
+          "cena": "940 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 32/63",
+          "popis": "",
+          "cena": "790 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 0/32",
+          "popis": "",
+          "cena": "690 Kč/t"
+        },
+        {
+          "nazev": "Kamenivo 0/63",
+          "popis": "",
+          "cena": "650 Kč/t"
+        },
+        {
+          "nazev": "Čistá tříděná zemina 0/8",
+          "popis": "",
+          "cena": "450 Kč/t"
+        }
+      ]
+    },
+    {
+      "klic": "material-recyklaty",
+      "nazev": "Recykláty",
+      "poznamka": "Ceny jsou bez DPH. Prodáváme podle množství, které je zrovna na skladě.",
+      "polozky": [
+        {
+          "nazev": "Směsný recyklát 0/8",
+          "popis": "zásypy inženýrských sítí, obsypy kabelů a potrubí, násypy, terénní úpravy",
+          "cena": "30 Kč/t"
+        },
+        {
+          "nazev": "Směsný recyklát 8/16",
+          "popis": "podkladní vrstvy a náspy komunikací, náhrada štěrku do výplňových betonů nižších tříd",
+          "cena": "120 Kč/t"
+        },
+        {
+          "nazev": "Směsný recyklát 20/100",
+          "popis": "obslužné a lesní cesty, drenážní vrstvy proti bahnu na staveništi",
+          "cena": "120 Kč/t"
+        },
+        {
+          "nazev": "Betonový recyklát 0/8",
+          "popis": "zásypy sítí, podsypy chodníků, obsypy potrubí a kabelů; dobře hutnitelný",
+          "cena": "50 Kč/t"
+        },
+        {
+          "nazev": "Betonový recyklát 8/16",
+          "popis": "podkladové a podsypové vrstvy s vyšší pevností, plnivo do betonů nižších tříd",
+          "cena": "175 Kč/t"
+        },
+        {
+          "nazev": "Betonový recyklát 20/100",
+          "popis": "podkladové vrstvy komunikací s větší zátěží, drenážní prvky",
+          "cena": "200 Kč/t"
+        },
+        {
+          "nazev": "Asfaltový recyklát",
+          "popis": "spodní podkladní vrstvy, zpevnění štěrkopískových podsypů",
+          "cena": "219 Kč/t"
+        }
+      ]
+    },
+    {
+      "klic": "material-doprava",
+      "nazev": "Doprava materiálu (Iveco 6 t)",
+      "poznamka": "Ceny jsou bez DPH.",
+      "polozky": [
+        {
+          "nazev": "Nakládka a vykládka",
+          "popis": "počítáno za úkon",
+          "cena": "250 Kč"
+        },
+        {
+          "nazev": "Moravské Budějovice a do 10 km",
+          "popis": "jednorázová cena dopravy",
+          "cena": "750 Kč"
+        },
+        {
+          "nazev": "Ostatní místa",
+          "popis": "počítají se ujeté km tam i zpět",
+          "cena": "32 Kč/km"
+        },
+        {
+          "nazev": "Výkon řidiče",
+          "popis": "příplatek k ceně za km",
+          "cena": "600 Kč/hod"
+        }
+      ]
+    }
+  ]
+}

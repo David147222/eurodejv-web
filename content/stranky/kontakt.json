@@ -1,0 +1,5 @@
+{
+  "nadpis": "Kontakt",
+  "popis": "Kontakt na stavební firmu EuroDejv: telefon +420 775 704 706, e-mail info@eurodejv.cz, Nové Syrovice 141. Poptávkový formulář a obchodní údaje.",
+  "obsah": "<section class=\"page-top\"><div class=\"in\"><span class=\"ey\">Kontakt</span><h1>Ozvěte se nám</h1><p class=\"lead\">Nejrychlejší je zavolat. Můžete nám také napsat e-mail nebo poslat poptávku přes formulář níže.</p></div></section>\n<section class=\"tight\"><div class=\"in kontakt\"><div class=\"kbox\"><h3>Telefon</h3><a class=\"big\" href=\"{{tel}}\">{{telefon}}</a><h3>E-mail</h3><a class=\"big mail\" href=\"mailto:{{email}}\">{{email}}</a><h3>Adresa</h3><p>EuroDejv s.r.o.<br>Nové Syrovice 141<br>675 41 Nové Syrovice</p><p>GPS: 49.0170839N, 15.7719169E<br><a href=\"https://www.google.com/maps/search/?api=1&amp;query=49.0170839,15.7719169\">Ukázat na mapě</a></p></div><div><h2>Poptávka</h2><p>Napište nám, co potřebujete. Ozveme se vám co nejdřív.</p>{{formular}}</div></div></section>\n<section class=\"alt\" id=\"firmy\"><div class=\"in\"><div class=\"head\"><h2>Obchodní údaje</h2></div>{{firmy}}</div></section>\n"
+}

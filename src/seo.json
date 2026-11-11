@@ -1,0 +1,7 @@
+{
+  "_poznamka": "Údaje pro vyhledávače (strukturovaná data na úvodní stránce, doplněk názvu stránek). Kontakty, adresa a GPS se berou z content/nastaveni.json. Nic nevymýšlet: vše musí odpovídat textům na webu.",
+  "misto": "stavební firma, Nové Syrovice",
+  "oblast": ["Moravské Budějovice", "Znojmo", "Třebíč", "Jihlava", "Moravský Krumlov", "Náměšť nad Oslavou", "Okříšky", "Třešť", "Telč", "Dačice", "Jemnice", "Hrotovice", "Dukovany"],
+  "fotky": ["hero", "fasada", "drevostavba2", "bagr", "leseni"],
+  "sluzby": ["Stavební práce a rekonstrukce", "Zateplení fasád", "Sádrokartonové konstrukce", "Zemní práce a demolice", "Pronájem a montáž lešení", "Půjčovna stavební techniky", "Mobilní drcení a třídění suti", "Prodej štěrku, písku a recyklátů"]
+}
