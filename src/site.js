@@ -133,4 +133,66 @@
       if (f.hasAttribute('data-test')) { e.preventDefault(); ukaz('Tohle je zkušební verze webu, formulář zatím nic neodesílá.', true); }
     });
   });
+
+  // Souhlas s cookies a Google značka (Google Ads). Značka se načte jen na ostrém webu a jen po souhlasu v liště.
+  // Kód je v administraci (Kontakty a nastavení → Google značka); build.js ho dá do data-gtag u tohoto skriptu.
+  // Na zkušebním webu je v data-gtag „test“: lišta funguje, ale od Googlu se nic nenačte.
+  var skript = document.querySelector('script[data-gtag]');
+  var GID = skript ? skript.getAttribute('data-gtag') : '';
+  var SKLIC = 'eurodejv-cookies', lista = null, nacteno = false;
+  var ck = document.querySelector('a[href$="/cookies/"]');
+  var cookiesUrl = ck ? ck.getAttribute('href') : '/cookies/';
+  var volba = function () { try { return localStorage.getItem(SKLIC); } catch (e) { return null; } };
+  var zapamatuj = function (v) { try { localStorage.setItem(SKLIC, v); } catch (e) { /* bez paměti se lišta ukáže znovu na další stránce */ } };
+  var nactiGoogle = function () {
+    if (nacteno || !/^(AW|G|GT)-[A-Z0-9]+$/.test(GID)) return;
+    nacteno = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+    window.gtag('js', new Date());
+    window.gtag('config', GID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GID);
+    document.head.appendChild(s);
+    // Odeslaná poptávka (návrat z formuláře s ?odeslano=1) se Googlu ohlásí jako získaný zájemce
+    if (/odeslano=1/.test(location.search)) window.gtag('event', 'generate_lead', { method: 'poptavka' });
+  };
+  var smazGoogleCookies = function () {
+    var dom = location.hostname.replace(/^www\./, '');
+    document.cookie.split(';').forEach(function (c) {
+      var n = c.split('=')[0].trim();
+      if (/^_(gcl|ga|gid)/.test(n)) ['', '; domain=' + dom, '; domain=.' + dom].forEach(function (d) { document.cookie = n + '=; Max-Age=0; path=/' + d; });
+    });
+  };
+  var schovejListu = function () { if (lista) { lista.remove(); lista = null; } document.body.classList.remove('ma-souhlas'); };
+  var ukazListu = function () {
+    if (lista || !GID) return;
+    lista = document.createElement('div');
+    lista.className = 'souhlas';
+    lista.setAttribute('role', 'region');
+    lista.setAttribute('aria-label', 'Souhlas s cookies');
+    lista.innerHTML = '<p>Se souhlasem použijeme cookies Googlu, abychom věděli, jestli k nám reklama přivádí zákazníky. <a href="' + cookiesUrl + '">Podrobnosti</a></p>'
+      + '<div class="souhlas-bt"><button type="button" class="btn gh" data-volba="ne">Odmítnout</button><button type="button" class="btn" data-volba="ano">Souhlasím</button></div>';
+    document.body.appendChild(lista);
+    document.body.classList.add('ma-souhlas');
+  };
+  if (!GID) document.querySelectorAll('.cookies-zmenit').forEach(function (b) { b.hidden = true; });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest) return;
+    var tel = e.target.closest('a[href^="tel:"]');
+    if (tel && nacteno) window.gtag('event', 'contact', { method: 'telefon' });
+    if (e.target.closest('.cookies-zmenit')) { ukazListu(); return; }
+    var b = e.target.closest('[data-volba]');
+    if (!b) return;
+    var v = b.getAttribute('data-volba');
+    zapamatuj(v);
+    schovejListu();
+    if (v === 'ano') nactiGoogle();
+    else { smazGoogleCookies(); if (nacteno) location.reload(); } // odvolaný souhlas: běžící značku zastaví až nové načtení stránky
+  });
+  var v0 = volba();
+  if (v0 === 'ano') nactiGoogle();
+  else if (v0 !== 'ne') ukazListu();
 })();

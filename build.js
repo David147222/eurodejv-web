@@ -63,7 +63,9 @@ function pujcovnaKat(klic, nadpis = false) {
   const k = PUJ.find(k => k.klic === klic);
   if (!k) throw new Error('Chybí kategorie půjčovny: ' + klic);
   const head = nadpis ? `<div class="kat-head"><h2>${esc(k.nazev)}</h2>${k.popis ? `<p>${esc(k.popis)}</p>` : ''}${k.odkaz ? `<a class="kat-odkaz" href="${esc(k.odkaz)}">${esc(k.odkaz_text || 'Více')} →</a>` : ''}</div>` : '';
-  return `${head}<div class="items${klic === 'stroje' ? ' velke' : ''}">${k.polozky.map(polozka).join('')}</div>`;
+  // Samostatně vložená kategorie (úvod, lešení, drcení) nese vlastní poznámku o DPH; celý katalog ji má jednou na konci
+  const dph = nadpis ? '' : '<p class="small dph">Ceny jsou bez DPH.</p>';
+  return `${head}<div class="items${klic === 'stroje' ? ' velke' : ''}">${k.polozky.map(polozka).join('')}</div>${dph}`;
 }
 
 function pujcovna() {
@@ -248,6 +250,11 @@ const kod = v => { const m = String(v || '').match(/content=["']([^"']+)["']/); 
 const OVERENI = [['google-site-verification', S.google_overeni], ['seznam-wmt', S.seznam_overeni]]
   .filter(([, v]) => kod(v)).map(([n, v]) => `<meta name="${n}" content="${esc(kod(v))}">`).join('\n');
 
+// Google značka (Google Ads / Analytics) z administrace. Načte ji site.js až po souhlasu návštěvníka v liště.
+// Na zkušebním webu se místo kódu předá „test“: lišta jde vyzkoušet, ale nic se od Googlu nenačte.
+const ZNACKA = /^(AW|G|GT)-[A-Z0-9]+$/.test(String(S.google_znacka || '').trim()) ? String(S.google_znacka).trim() : '';
+const GTAG = ZNACKA ? ` data-gtag="${ZKUSEBNI ? 'test' : ZNACKA}"` : '';
+
 // Písma jsou přímo na webu (public/fonts/), ne z Google Fonts
 const PISMA = ['source-sans-3-latin', 'source-sans-3-latin-ext', 'bricolage-latin', 'bricolage-latin-ext'];
 
@@ -307,7 +314,7 @@ ${podmenu(id)}${obsah}
 </div><div class="in copy">© ${ROK} ${esc(S.provozovatel)}</div></footer>
 <div class="dock"><a href="${TEL}" class="btn gh">Zavolat</a><a href="${pop}" class="btn">Poptávka<b class="pocet" hidden></b></a></div>
 <a class="kosik" href="${pop}" hidden>Vybráno z půjčovny: <b>0</b> <span>Poslat poptávku →</span></a>
-<script src="/site.js?v=${VERZE}" defer></script>
+<script src="/site.js?v=${VERZE}" defer${GTAG}></script>
 </body>
 </html>`;
   return sBase(html);

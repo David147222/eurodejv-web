@@ -44,3 +44,31 @@ php -S 127.0.0.1:8090 -t dist                   # prohlédnutí v prohlížeči
 - **Wedos (eurodejv.cz):** workflow `nahrat-na-wedos.yml`, zatím jen ručně. Na eurodejv.cz dnes běží starý web
   (WordPress). Přepnutí domény na nový web jen s Davidovým souhlasem, pak se workflow zapne po každé změně v `main`.
   Potřebné údaje (FTP, OAuth pro administraci) patří jen do GitHub Secrets.
+
+## Google značka a cookies
+
+Starý web měl Google značku `AW-17658110042` (Google Ads, přes plugin Site Kit). David 12. 11. 2026 rozhodl, že se na nový web
+nepřenáší: nový web nic neměří a lištu se souhlasem nepotřebuje. Pro případ, že by se měření jednou vracelo, je připravené
+pole `google_znacka` v `content/nastaveni.json` (v administraci „Google značka – kód“). Po vyplnění se značka načte jen na ostrém webu
+a jen tomu, kdo v liště klikne „Souhlasím“ (odeslaná poptávka = `generate_lead`, kliknutí na telefon = `contact`).
+Pak je potřeba přepsat i odstavec Cookies na stránce `cookies` a vložit tam tlačítko `<button type="button" class="btn gh cookies-zmenit">Změnit souhlas s cookies</button>`.
+
+## Přepnutí domény eurodejv.cz na nový web (až s Davidovým souhlasem)
+
+Doména i DNS jsou u WEDOSu, starý web běží na webhostingu WEDOS za ochranou WEDOS Global.
+
+1. **Záloha starého webu** (David nebo Claude přes FTP): celý starý WordPress přesunout do složky `_stary-web`
+   (`.htaccess` ji zvenku zablokuje) a v administraci WEDOSu stáhnout zálohu databáze.
+2. **Údaje do GitHub Secrets** (David, Settings → Secrets and variables → Actions): `FTP_SERVER`, `FTP_USERNAME`,
+   `FTP_PASSWORD`, `FTP_DIR` (složka webu eurodejv.cz na hostingu WEDOS).
+3. **Přihlášení do administrace** (David): na GitHubu založit OAuth aplikaci (Settings → Developer settings → OAuth Apps,
+   adresa `https://eurodejv.cz`, callback `https://eurodejv.cz/admin/auth.php`) a její Client ID a Secret uložit
+   jako `OAUTH_CLIENT_ID` a `OAUTH_CLIENT_SECRET`.
+4. **Pošta z formuláře** (David, WEDOS → DNS domény eurodejv.cz): TXT záznam SPF na prázdném názvu změnit na
+   `v=spf1 include:_spf.previo.app include:_spf.google.com include:_spf.we.wedos.net ~all`
+   (přidává se jen `include:_spf.we.wedos.net`, zbytek zůstává). Ověřit, že adresa `info@eurodejv.cz` v Google Workspace existuje.
+5. **Nahrání** (Claude): Actions → Nahrát web na Wedos → Run workflow; pak v `nahrat-na-wedos.yml` zapnout nahrávání po každé změně v `main`.
+6. **WEDOS Global**: vymazat mezipaměť (cache), ať se neukazuje starý web.
+7. **Kontrola** (Claude + David): projít stránky a staré adresy (přesměrování), poslat zkušební poptávku
+   a ověřit, že dorazila do schránky a ne do spamu, přihlásit se do `/admin/`.
+8. **Google**: v Search Console ověřit doménu (kód do pole „Ověřovací kód Google Search Console“) a odeslat `sitemap.xml`.

@@ -186,6 +186,7 @@ collections:
               - { name: odkaz, label: "Adresa", widget: string }
           - { name: google_overeni, label: "Ověřovací kód Google Search Console (nepovinné)", widget: string, required: false, hint: "Vložte kód nebo celý řádek <meta ...> z Google Search Console (metoda Značka HTML)." }
           - { name: seznam_overeni, label: "Ověřovací kód Seznam Webmaster (nepovinné)", widget: string, required: false, hint: "Vložte kód nebo celý řádek <meta ...> ze Seznam Webmaster." }
+          - { name: google_znacka, label: "Google značka – kód (nepovinné)", widget: string, required: false, hint: "Kód značky Google Ads nebo Google Analytics (začíná AW- nebo G-). Načte se jen tomu, kdo v liště odsouhlasí cookies. Když pole vymažete, lišta se souhlasem zmizí – pak upravte i stránku Cookies." }
 
   - name: stranky
     label: Stránky
