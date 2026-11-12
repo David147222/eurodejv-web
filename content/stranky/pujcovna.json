@@ -1,5 +1,27 @@
 {
   "nadpis": "Půjčovna stavební techniky",
   "popis": "Půjčte si bagr Bobcat E50, nakladač, nosič kontejnerů Iveco, příslušenství, menší stroje, drtič, třídič nebo lešení. Přehledný ceník a poptávka.",
-  "obsah": "<section class=\"hero sm\" style=\"background-image:url('{{foto:novotny}}')\"><div class=\"in\"><span class=\"ey\">Půjčovna</span><h1>Půjčovna stavební techniky</h1><p>Bagr, nakladač, nebo nákladní auto? Máme. Vyberte si, co potřebujete, přidejte to do poptávky a my se vám ozveme.</p><div class=\"bt\"><a class=\"btn\" href=\"#stroje\">Vybrat stroj</a><a class=\"btn ol\" href=\"{{tel}}\">Zavolat {{telefon}}</a></div></div></section>\n<section class=\"tight\"><div class=\"in\"><ol class=\"kroky\"><li><b>Vyberte</b><span>U každé věci klikněte na „Přidat do poptávky“.</span></li><li><b>Pošlete poptávku</b><span>Stačí jméno, telefon a termín. Vybrané věci se do ní doplní samy.</span></li><li><b>Domluvíme se</b><span>Ozveme se vám a domluvíme termín a podrobnosti.</span></li></ol></div></section>\n<section class=\"tight\"><div class=\"in\">{{pujcovna}}<p class=\"small konec\">Ceny jsou bez DPH.</p></div></section>\n<section class=\"alt\"><div class=\"in split\"><div><span class=\"ey\">Než si stroj půjčíte</span><h2>Odpovědnost za stroj</h2><p>Za zapůjčený stroj odpovídáte po celou dobu pronájmu, včetně běžné denní údržby. Pokyny k údržbě přikládáme ke každému stroji. Podrobnosti najdete v dokumentu níže.</p><ul class=\"docs\"><li><a href=\"/dokumenty/odpovednost-za-stroj.pdf\">Odpovědnost za stroj a péče o něj</a></li></ul></div><img src=\"{{foto:bagr3}}\" alt=\"\"></div></section>\n<section><div class=\"in kontakt\"><div><span class=\"ey\">Poptávka</span><h2>Poptávka z půjčovny</h2><p>Vybrané věci se do poptávky doplní samy. Napište nám jen, na kdy je potřebujete.</p><p>Raději voláte? <a href=\"{{tel}}\"><b>{{telefon}}</b></a></p></div>{{formular:Půjčovna}}</div></section>\n"
+  "obsah": "<section class=\"hero sm\" style=\"background-image:url('{{foto:novotny}}')\"><div class=\"in\"><span class=\"ey\">Půjčovna</span><h1>Půjčovna stavební techniky</h1><p>Bagr, nakladač, nebo nákladní auto? Máme. Vyberte si, co potřebujete, přidejte to do poptávky a my se vám ozveme.</p><div class=\"bt\"><a class=\"btn\" href=\"#stroje\">Vybrat stroj</a><a class=\"btn ol\" href=\"{{tel}}\">Zavolat {{telefon}}</a></div></div></section>\n<section class=\"tight\"><div class=\"in\"><ol class=\"kroky\"><li><b>Vyberte</b><span>U každé věci klikněte na „Přidat do poptávky“.</span></li><li><b>Pošlete poptávku</b><span>Stačí jméno, telefon a termín. Vybrané věci se do ní doplní samy.</span></li><li><b>Domluvíme se</b><span>Ozveme se vám a domluvíme termín a podrobnosti.</span></li></ol></div></section>\n<section class=\"tight\"><div class=\"in\">{{pujcovna}}<p class=\"small konec\">Ceny jsou bez DPH.</p></div></section>\n<section class=\"alt\"><div class=\"in split\"><div><span class=\"ey\">Než si stroj půjčíte</span><h2>Odpovědnost za stroj</h2><p>Za zapůjčený stroj odpovídáte po celou dobu pronájmu, včetně běžné denní údržby. Pokyny k údržbě přikládáme ke každému stroji. Podrobnosti najdete v dokumentu níže.</p><ul class=\"docs\"><li><a href=\"/dokumenty/odpovednost-za-stroj.pdf\">Odpovědnost za stroj a péče o něj</a></li></ul></div><img src=\"{{foto:bagr3}}\" alt=\"\"></div></section>\n{{dotazy}}\n<section><div class=\"in kontakt\"><div><span class=\"ey\">Poptávka</span><h2>Poptávka z půjčovny</h2><p>Vybrané věci se do poptávky doplní samy. Napište nám jen, na kdy je potřebujete.</p><p>Raději voláte? <a href=\"{{tel}}\"><b>{{telefon}}</b></a></p></div>{{formular:Půjčovna}}</div></section>\n",
+  "dotazy": [
+    {
+      "otazka": "Jak si stroj nebo nářadí půjčím?",
+      "odpoved": "U věci, kterou potřebujete, klikněte na „Přidat do poptávky“ a pošlete poptávku se jménem, telefonem a termínem. Nebo nám rovnou zavolejte na <a href=\"{{tel}}\">{{telefon}}</a>. Ozveme se vám a domluvíme termín i podrobnosti."
+    },
+    {
+      "otazka": "Jsou ceny v půjčovně s DPH?",
+      "odpoved": "Ne, všechny ceny v půjčovně jsou bez DPH."
+    },
+    {
+      "otazka": "Kdo odpovídá za stroj, když ho mám půjčený?",
+      "odpoved": "Po dobu zápůjčky za stroj odpovídáte vy: zabezpečíte ho proti krádeži, každý den zkontrolujete oleje, chladicí kapalinu, palivo a pneumatiky nebo pásy podle přiloženého návodu a každou závadu nám hned nahlásíte. Opravu kvůli zanedbané údržbě platí zákazník. Podrobně to popisuje dokument <a href=\"/dokumenty/odpovednost-za-stroj.pdf\">Odpovědnost za stroj (PDF)</a>."
+    },
+    {
+      "otazka": "Nechci si stroj půjčovat, potřebuji jen něco vykopat. Uděláte to?",
+      "odpoved": "Ano. Stroje nasadíme i na vaši zakázku s naší obsluhou. Hodinový ceník práce s technikou najdete na stránce <a href=\"/zemni-prace/\">Zemní práce</a>."
+    },
+    {
+      "otazka": "Půjčujete i lešení?",
+      "odpoved": "Ano, rámové fasádní lešení i pojízdné hliníkové věže BOOS. Ceny a podmínky jsou na stránce <a href=\"/leseni/\">Lešení</a>."
+    }
+  ]
 }

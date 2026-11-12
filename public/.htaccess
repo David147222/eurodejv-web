@@ -32,7 +32,16 @@ RewriteRule ^(index|stavebni-firma)/zemni-prace/?$ https://%{HTTP_HOST}/zemni-pr
 RewriteRule ^(index|stavebni-firma)/leseni/?$ https://%{HTTP_HOST}/leseni/ [R=301,L]
 RewriteRule ^(index|stavebni-firma)/pujcovna/?$ https://%{HTTP_HOST}/pujcovna/ [R=301,L]
 RewriteRule ^(index|stavebni-firma)/drceni-stavebni-suti-betonu-a-kamene/?$ https://%{HTTP_HOST}/drceni-a-material/ [R=301,L]
-RewriteRule ^index/prodej-sterku-pisku-zeminy-a-reciklatu-a_kopie/?$ https://%{HTTP_HOST}/drceni-a-material/#material [R=301,L,NE]
+RewriteRule ^(index|stavebni-firma)/prodej-sterku-pisku-zeminy-a-reciklatu-a(_kopie)?/?$ https://%{HTTP_HOST}/drceni-a-material/#material [R=301,L,NE]
+# Tytez stranky stareho webu bez /index/ (zna je Seznam, stav 12. 11. 2026)
+RewriteRule ^stavba/?$ https://%{HTTP_HOST}/stavebni-prace/ [R=301,L]
+RewriteRule ^drceni-stavebni-suti-betonu-a-kamene/?$ https://%{HTTP_HOST}/drceni-a-material/ [R=301,L]
+RewriteRule ^prodej-sterku-pisku-zeminy-a-reciklatu-a(_kopie)?/?$ https://%{HTTP_HOST}/drceni-a-material/#material [R=301,L,NE]
+RewriteRule ^dotace(_v2)?/?$ https://%{HTTP_HOST}/zatepleni-fasad/ [R=301,L]
+RewriteRule ^(ostatni|hello-world|icon-[a-z0-9-]+)/?$ https://%{HTTP_HOST}/ [R=301,L]
+RewriteRule ^(leseni|pujcovna|zemni-prace)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+# Zbytky WordPressu (autor, kategorie, stitky, komentare) -> uvod
+RewriteRule ^(author|category|tag|comments)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
 RewriteRule ^index/dotace_v2/?$ https://%{HTTP_HOST}/zatepleni-fasad/ [R=301,L]
 RewriteRule ^wp-content/uploads/2025/08/Odpovednost-za-stroj_\.pdf$ https://%{HTTP_HOST}/dokumenty/odpovednost-za-stroj.pdf [R=301,L]
 RewriteRule ^wp-content/uploads/2024/08/manual-Podlahova-bruska-PG-510\.pdf$ https://%{HTTP_HOST}/dokumenty/navod-bruska-pg-510.pdf [R=301,L]

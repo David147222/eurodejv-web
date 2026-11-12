@@ -298,3 +298,16 @@ p.dph{margin:14px 0 0}
 .ma-souhlas .kosik{display:none}
 @media (max-width:980px){.souhlas{left:12px;right:12px;bottom:12px;width:auto}}
 @media (max-width:640px){.souhlas{bottom:calc(80px + env(safe-area-inset-bottom,0px));padding:14px}}
+
+/* Časté dotazy ({{dotazy}}) – rozbalovací otázky */
+.dotazy{display:grid;gap:10px;max-width:880px}
+.dotazy details{background:#fff;border:1px solid var(--line);border-radius:10px}
+.dotazy summary{cursor:pointer;list-style:none;position:relative;padding:16px 52px 16px 18px;font:600 1.05rem/1.35 var(--d)}
+.dotazy summary::-webkit-details-marker{display:none}
+.dotazy summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);font:600 1.5rem/1 var(--b);color:var(--red)}
+.dotazy details[open] summary::after{content:'−'}
+.dotazy .odp{padding:0 18px 16px;color:var(--muted)}.dotazy .odp p{margin:0}
+
+/* Kde působíme ({{oblast}}) */
+.oblast{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.oblast li{padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:600}

@@ -28,6 +28,9 @@ a vybrané věci se samy doplní do poptávkového formuláře.
 V obsahu stránek se vkládají bloky značkami: `{{cenik:klic}}`, `{{pujcovna}}`, `{{pujcovna:klic}}`,
 `{{reference}}`, `{{reference-vyber}}`, `{{eu}}`, `{{firmy}}`, `{{certifikaty}}`, `{{formular}}` nebo
 `{{formular:Téma}}`, `{{foto:kod}}`, `{{tel}}`, `{{telefon}}`, `{{email}}`.
+`{{oblast}}` vloží seznam obcí, kde působíme (`src/seo.json` → `oblast`, totéž dostane Google jako `areaServed`).
+`{{dotazy}}` vloží časté dotazy stránky z pole `dotazy` v jejím JSONu (v administraci „Časté dotazy“); Google je dostane
+i jako strukturovaná data FAQPage. Odpovědi smí obsahovat odkaz a jen fakta, která jsou jinde na webu nebo je potvrdil David.
 
 ## Sestavení a kontrola
 
@@ -71,4 +74,7 @@ Doména i DNS jsou u WEDOSu, starý web běží na webhostingu WEDOS za ochranou
 6. **WEDOS Global**: vymazat mezipaměť (cache), ať se neukazuje starý web.
 7. **Kontrola** (Claude + David): projít stránky a staré adresy (přesměrování), poslat zkušební poptávku
    a ověřit, že dorazila do schránky a ne do spamu, přihlásit se do `/admin/`.
-8. **Google**: v Search Console ověřit doménu (kód do pole „Ověřovací kód Google Search Console“) a odeslat `sitemap.xml`.
+8. **Google a Seznam**: v Google Search Console a v Seznam Webmaster přidat web (ověření kódem do polí v administraci
+   „Kontakty a nastavení“, nebo TXT záznamem v DNS u WEDOSu), odeslat `https://eurodejv.cz/sitemap.xml` a požádat o odstranění
+   starých adres, které v indexu zůstaly (`/kosik`, `/eshop`, `/author/admin`, `/index/dotace_v2/` …). Přesměrování v `.htaccess`
+   pokrývají všechny staré adresy, které Google a Seznam 12. 11. 2026 znaly (ověřeno na Apache).
