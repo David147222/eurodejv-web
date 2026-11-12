@@ -47,11 +47,11 @@ php -S 127.0.0.1:8090 -t dist                   # prohlédnutí v prohlížeči
 
 ## Google značka a cookies
 
-Starý web měl Google značku `AW-17658110042` (Google Ads, přes plugin Site Kit). Nový web ji má v `content/nastaveni.json`
-(pole `google_znacka`, v administraci „Google značka – kód“). Načte se jen na ostrém webu a jen tomu, kdo v liště
-klikne „Souhlasím“. Odeslaná poptávka se Googlu ohlásí jako `generate_lead`, kliknutí na telefon jako `contact`.
-Aby se v Google Ads počítaly jako konverze, musí se tam nastavit (Cíle → Konverze → z událostí značky).
-Na zkušebním webu jde lišta vyzkoušet, ale od Googlu se nic nenačte.
+Starý web měl Google značku `AW-17658110042` (Google Ads, přes plugin Site Kit). David 12. 11. 2026 rozhodl, že se na nový web
+nepřenáší: nový web nic neměří a lištu se souhlasem nepotřebuje. Pro případ, že by se měření jednou vracelo, je připravené
+pole `google_znacka` v `content/nastaveni.json` (v administraci „Google značka – kód“). Po vyplnění se značka načte jen na ostrém webu
+a jen tomu, kdo v liště klikne „Souhlasím“ (odeslaná poptávka = `generate_lead`, kliknutí na telefon = `contact`).
+Pak je potřeba přepsat i odstavec Cookies na stránce `cookies` a vložit tam tlačítko `<button type="button" class="btn gh cookies-zmenit">Změnit souhlas s cookies</button>`.
 
 ## Přepnutí domény eurodejv.cz na nový web (až s Davidovým souhlasem)
 
