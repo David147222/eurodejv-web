@@ -38,7 +38,7 @@ const nbsp = s => String(s).replace(/(\d) (\d)/g, '$1&nbsp;$2');
 // --- vložené bloky v textech stránek ---------------------------------------------------------
 // {{tel}} = odkaz pro vytočení, {{telefon}} = číslo, {{email}} = e-mail, {{foto:kod}} = fotka z content/fotky.json,
 // {{cenik:klic}} = ceník z content/ceniky.json, {{reference}} / {{reference-vyber}} = reference,
-// {{pujcovna}} = celý katalog půjčovny, {{pujcovna:klic}} = jedna jeho kategorie, {{eu}} = projekty EU, {{firmy}} = obchodní údaje, {{certifikaty}} = loga certifikátů, {{formular}} / {{formular:Téma}} = poptávka
+// {{oblast}} = obce, kde působíme, {{dotazy}} = časté dotazy stránky (pole „dotazy“), {{pujcovna}} = celý katalog půjčovny, {{pujcovna:klic}} = jedna jeho kategorie, {{eu}} = projekty EU, {{firmy}} = obchodní údaje, {{certifikaty}} = loga certifikátů, {{formular}} / {{formular:Téma}} = poptávka
 
 function cenik(klic) {
   const c = CENIKY.find(c => c.klic === klic);
@@ -119,8 +119,24 @@ function formular(tema = '') {
 </form>`;
 }
 
+// {{oblast}} = obce, kde působíme (src/seo.json → oblast; totéž dostane Google jako areaServed)
+function oblast() {
+  return `<ul class="oblast">${SEO.oblast.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`;
+}
+
+// {{dotazy}} = časté dotazy stránky z pole „dotazy“ (otázka + odpověď, odpověď smí obsahovat odkaz).
+// Google je dostane i jako strukturovaná data FAQPage (viz strukturovana()).
+const platneDotazy = p => (p.dotazy || []).filter(x => x && String(x.otazka || '').trim() && String(x.odpoved || '').trim());
+function dotazy(p) {
+  const d = platneDotazy(p);
+  if (!d.length) return '';
+  return `<section class="tight" id="dotazy"><div class="in"><div class="head"><span class="ey">Časté dotazy</span><h2>Na co se nás často ptáte</h2></div>`
+    + `<div class="dotazy">${d.map(x => `<details><summary>${esc(x.otazka)}</summary><div class="odp"><p>${x.odpoved}</p></div></details>`).join('')}</div></div></section>`;
+}
+
 function vlozky(html) {
   return html
+    .replace(/\{\{oblast\}\}/g, oblast)
     .replace(/\{\{tel\}\}/g, TEL)
     .replace(/\{\{telefon\}\}/g, S.telefon)
     .replace(/\{\{email\}\}/g, esc(S.email))
@@ -242,6 +258,10 @@ function strukturovana(id, p) {
     kroky.push([(par === id ? jmenoVMenu(id) : jmenoStranky(id)) || p.nadpis, D + url(id)]);
     g.push({ '@type': 'BreadcrumbList', itemListElement: kroky.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) });
   }
+  const dd = platneDotazy(p);
+  if (dd.length && /\{\{dotazy\}\}/.test(p.obsah)) {
+    g.push({ '@type': 'FAQPage', mainEntity: dd.map(x => ({ '@type': 'Question', name: x.otazka, acceptedAnswer: { '@type': 'Answer', text: text(vlozky(x.odpoved)) } })) });
+  }
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': g }).replace(/</g, '\\u003c')}</script>`;
 }
 
@@ -267,7 +287,7 @@ function page(id, p, opt = {}) {
   const noindex = opt.noindex || ZKUSEBNI;
   const title = id === 'uvod' ? `${S.nazev} – ${p.nadpis}` : `${p.nadpis} · ${S.nazev}${opt.noindex ? '' : ', ' + SEO.misto}`;
   const self = S.domena + url(id);
-  const { html: obsah, hero, bg } = obrazky(fotky(vlozky(p.obsah)));
+  const { html: obsah, hero, bg } = obrazky(fotky(vlozky(p.obsah.replace(/\{\{dotazy\}\}/g, () => dotazy(p)))));
   const ogKod = (p.obsah.match(/\{\{foto:[a-z0-9_-]+\}\}/g) || []).map(s => s.slice(7, -2)).find(k => FOTO[k]) || 'hero';
   const notice = S.upozorneni ? `<div class="demo">${S.upozorneni}</div>` : '';
   const test = ZKUSEBNI ? '<div class="demo">Zkušební verze nového webu. Platný web je zatím na <a href="https://eurodejv.cz">eurodejv.cz</a>.</div>' : '';
