@@ -38,5 +38,8 @@ $telo = "Poptávka z webu eurodejv.cz\n\n"
 $hlavicky = "From: Web EuroDejv <$komu>\r\n"
   . ($email !== '' ? "Reply-To: $email\r\n" : '')
   . "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";
-$ok = mail($komu, '=?UTF-8?B?' . base64_encode($predmet) . '?=', $telo, $hlavicky);
+// Zpáteční adresa (return-path) musí být na naší doméně, jinak Wedos pošle e-mail jako svůj server
+// a Google ho kvůli SPF může dát do spamu (návod Wedosu: kb.wedos.com, „E-maily – SPF, DKIM a DMARC“).
+// K tomu v DNS domény eurodejv.cz patří include:_spf.we.wedos.net (viz README, část Přepnutí domény).
+$ok = mail($komu, '=?UTF-8?B?' . base64_encode($predmet) . '?=', $telo, $hlavicky, '-f' . $komu);
 $vysledek($ok ? 'odeslano=1' : 'chyba=2');
