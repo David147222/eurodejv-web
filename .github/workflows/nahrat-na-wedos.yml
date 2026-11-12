@@ -1,11 +1,13 @@
-# Sestaví web a nahraje ho na Wedos přes FTP.
-# ZATÍM JEN RUČNĚ (Actions → Nahrát web na Wedos → Run workflow): na eurodejv.cz dnes běží starý web
-# a přepnutí na nový web se dělá jen s Davidovým souhlasem. Po přepnutí se sem přidá spouštění po každé změně v main
-# (on: push: branches: [main]), stejně jako u panelcz.cz.
+# Po každé změně v main (z administrace nebo z počítače) sestaví web a nahraje ho na Wedos přes FTP.
+# Přepnutí eurodejv.cz na nový web schválil David 12. 11. 2026. Jde spustit i ručně (Actions → Nahrát web na Wedos → Run workflow).
+# Hosting eurodejv.cz u WEDOSu: webhosting NoLimit č. 311719, web ve složce /www/domains/eurodejv.cz/.
+# Starý WordPress ve složce zůstává (nic se nemaže); nový index.html a .htaccess mají přednost.
 # Potřebné údaje v Settings → Secrets and variables → Actions:
-#   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_DIR, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET
+#   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_DIR (povinné), OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET (pro administraci)
 name: Nahrát web na Wedos
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:

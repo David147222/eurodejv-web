@@ -44,9 +44,9 @@ php -S 127.0.0.1:8090 -t dist                   # prohlédnutí v prohlížeči
 
 - **Zkušební web:** po každé změně v `main` se sám zveřejní na https://david147222.github.io/eurodejv-web/
   (skrytý před vyhledávači, formulář nic neodesílá). Workflow `zkusebni-web.yml`.
-- **Wedos (eurodejv.cz):** workflow `nahrat-na-wedos.yml`, zatím jen ručně. Na eurodejv.cz dnes běží starý web
-  (WordPress). Přepnutí domény na nový web jen s Davidovým souhlasem, pak se workflow zapne po každé změně v `main`.
-  Potřebné údaje (FTP, OAuth pro administraci) patří jen do GitHub Secrets.
+- **Wedos (eurodejv.cz):** workflow `nahrat-na-wedos.yml` po každé změně v `main` nahraje web přes FTP na hosting eurodejv.cz
+  (WEDOS NoLimit č. 311719, složka `/www/domains/eurodejv.cz/`). Přepnutí schválil David 12. 11. 2026. Starý WordPress ve složce
+  zůstává jako záloha (nový `index.html` a `.htaccess` mají přednost). Údaje (FTP, OAuth pro administraci) jsou jen v GitHub Secrets.
 
 ## Ceny kameniva
 
