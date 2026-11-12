@@ -48,6 +48,13 @@ php -S 127.0.0.1:8090 -t dist                   # prohlédnutí v prohlížeči
   (WordPress). Přepnutí domény na nový web jen s Davidovým souhlasem, pak se workflow zapne po každé změně v `main`.
   Potřebné údaje (FTP, OAuth pro administraci) patří jen do GitHub Secrets.
 
+## Ceny kameniva
+
+Ceny v ceníku „Štěrk, písek a zemina“ (`content/ceniky.json` → `material-kamenivo`) = ceník lomu Pavlice
+(Madest s.r.o., https://www.madest.cz/cenik, ceny bez DPH, platnost od 1. 2. 2026) + 20 %, zaokrouhleno na celé koruny
+(David 12. 11. 2026). Písek 0/4 podle „0/4 Oblekovický písek“. Čistá tříděná zemina 0/8 se tím neřídí.
+Když lom změní ceník, přepočítat znovu.
+
 ## Google značka a cookies
 
 Starý web měl Google značku `AW-17658110042` (Google Ads, přes plugin Site Kit). David 12. 11. 2026 rozhodl, že se na nový web
