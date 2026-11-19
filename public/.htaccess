@@ -41,7 +41,7 @@ RewriteRule ^dotace(_v2)?/?$ https://%{HTTP_HOST}/zatepleni-fasad/ [R=301,L]
 RewriteRule ^(ostatni|hello-world|icon-[a-z0-9-]+)/?$ https://%{HTTP_HOST}/ [R=301,L]
 RewriteRule ^(leseni|pujcovna|zemni-prace)$ https://%{HTTP_HOST}/$1/ [R=301,L]
 # Zbytky WordPressu (autor, kategorie, stitky, komentare) -> uvod
-RewriteRule ^(author|category|tag|comments)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
+RewriteRule ^(author|category|tag|comments|uncategorized)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
 RewriteRule ^index/dotace_v2/?$ https://%{HTTP_HOST}/zatepleni-fasad/ [R=301,L]
 RewriteRule ^wp-content/uploads/2025/08/Odpovednost-za-stroj_\.pdf$ https://%{HTTP_HOST}/dokumenty/odpovednost-za-stroj.pdf [R=301,L]
 RewriteRule ^wp-content/uploads/2024/08/manual-Podlahova-bruska-PG-510\.pdf$ https://%{HTTP_HOST}/dokumenty/navod-bruska-pg-510.pdf [R=301,L]
@@ -51,7 +51,11 @@ RewriteRule ^wp-content/uploads/2024/08/manual-separator-C-3000\.pdf$ https://%{
 RewriteRule ^(index|stavebni-firma)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
 RewriteRule ^(prodej|eshop|kosik|pokladna|muj-ucet)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
 RewriteRule ^(wp-content|wp-admin|wp-includes|wp-json|feed)(/.*)?$ https://%{HTTP_HOST}/ [R=301,L]
-RewriteRule ^(wp-login\.php|xmlrpc\.php)$ https://%{HTTP_HOST}/ [R=301,L]
+# Stary WordPress ve slozce zustava jako zaloha, ale jeho soubory se nesmi spoustet ani cist
+# (do 19. 11. 2026 /index.php?p=1 ukazoval stare stranky a /index.php?rest_route=/ data WordPressu).
+# Vse -> uvod; otaznik na konci zahodi parametry adresy.
+RewriteRule ^(index|xmlrpc|wp-[a-z-]+)\.php$ https://%{HTTP_HOST}/? [R=301,L]
+RewriteRule ^(readme\.html|license\.txt)$ https://%{HTTP_HOST}/ [R=301,L]
 # Fotky webu smi nacist i jine weby
 <IfModule mod_headers.c>
 <FilesMatch "\.(jpe?g|png|webp)$">

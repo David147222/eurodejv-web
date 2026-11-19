@@ -55,6 +55,16 @@ Ceny v ceníku „Štěrk, písek a zemina“ (`content/ceniky.json` → `materi
 (David 12. 11. 2026). Písek 0/4 podle „0/4 Oblekovický písek“. Čistá tříděná zemina 0/8 se tím neřídí.
 Když lom změní ceník, přepočítat znovu.
 
+## Google Search Console
+
+Web je v Search Console pod Davidovým účtem ověřený souborem `public/google09c1aac17370fa1c.html`
+(obsah `google-site-verification: google09c1aac17370fa1c.html`). Starý WordPress ho uměl sám, nový web ho musí mít v repozitáři,
+jinak by Google po čase ověření zrušil. **Soubor nikdy nemazat ani nepřejmenovat.**
+Mapa webu `https://eurodejv.cz/sitemap.xml` se v Search Console přidává v části Soubory Sitemap.
+
+Starý WordPress na hostingu dál leží jako záloha, ale `.htaccess` jeho soubory (`index.php`, `wp-*.php`, `xmlrpc.php`, `readme.html`,
+`license.txt`) přesměrovává na úvod, aby se nespouštěly (do 19. 11. 2026 přes `/index.php?p=1` ukazoval staré stránky).
+
 ## Google značka a cookies
 
 Starý web měl Google značku `AW-17658110042` (Google Ads, přes plugin Site Kit). David 12. 11. 2026 rozhodl, že se na nový web
